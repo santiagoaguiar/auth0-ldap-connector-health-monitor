@@ -10,4 +10,54 @@
     "auth0",
     "extension"
   ]
-}]
+},
+{
+  "title": "Dummy",
+  "name": "dummy",
+  "version": "2.0.0",
+  "author": "auth0",
+  "description": "Whatever.",
+  "type": "application",
+  "keywords": [
+    "auth0",
+    "extension"
+  ],
+  "secrets": {
+    "S3_ACCESS_KEY": {
+      "description": "S3 Access Key"
+    },
+    "S3_SECRET":     {
+      "description": "S3 Secret"
+    },
+    "S3_BUCKET":     {
+      "description": "S3 Bucket name",
+      "default": "my-bucket"
+    }
+  }
+},
+{
+  "title": "Cron",
+  "name": "cron",
+  "version": "1.0.0",
+  "author": "auth0",
+  "description": "Whatever.",
+  "type": "cron",
+  "keywords": [
+    "auth0",
+    "extension"
+  ],
+  "schedule": "0 */1 * * * *",
+  "secrets": {
+    "S3_ACCESS_KEY": {
+      "description": "S3 Access Key"
+    },
+    "S3_SECRET":     {
+      "description": "S3 Secret"
+    },
+    "S3_BUCKET":     {
+      "description": "S3 Bucket name",
+      "default": "my-bucket"
+    }
+  }
+}
+]
