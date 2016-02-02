@@ -4,6 +4,7 @@ module.exports = function (grunt) {
   var fs = require('fs');
   var read = fs.readFileSync;
 
+  var DEV_PATH  = 'extensions/develop/extensions.json';
   var BASE_PATH = 'extensions/extensions.json';
 
   var pkg = require('./package');
@@ -44,12 +45,34 @@ module.exports = function (grunt) {
             dest:   'extensions/'
           }
         ]
+      },
+
+      clean_dev: {
+        files: [
+          { action: 'delete', dest: DEV_PATH }
+        ]
+      },
+      publish_dev: {
+        files: [
+          {
+            expand: true,
+            cwd:    'release/',
+            src:    ['**'],
+            dest:   'extensions/develop'
+          }
+        ]
       }
     },
     http: {
       purge_json: {
         options: {
           url: process.env.CDN_ROOT + '/' + BASE_PATH,
+          method: 'DELETE'
+        }
+      },
+      purge_js_dev: {
+        options: {
+          url: process.env.CDN_ROOT + '/' + DEV_PATH,
           method: 'DELETE'
         }
       },
@@ -71,8 +94,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-aws-s3');
   grunt.loadNpmTasks('grunt-http');
-  grunt.loadNpmTasks('grunt-webpack');
 
   grunt.registerTask('purge_cdn', ['http:purge_json', 'http:purge_social_extension', 'http:purge_auth0_webhook']);
   grunt.registerTask('cdn',       ['copy:release', 'aws_s3:clean', 'aws_s3:publish', 'purge_cdn']);
+
+  grunt.registerTask('cdn-dev',   ['copy:release', 'aws_s3:clean_dev', 'aws_s3:publish_dev', 'http:purge_js_dev']);
 };
