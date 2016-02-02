@@ -58,6 +58,12 @@ module.exports = function (grunt) {
           url: process.env.CDN_ROOT + '/' + 'custom-social-connections/custom-social-connections-1.0.js',
           method: 'DELETE'
         }
+      },
+      purge_auth0_webhook: {
+        options: {
+          url: process.env.CDN_ROOT + '/' + 'auth0-webhooks/auth0-webhooks-1.0.js',
+          method: 'DELETE'
+        }
       }
     }
   });
@@ -67,6 +73,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-http');
   grunt.loadNpmTasks('grunt-webpack');
 
-  grunt.registerTask('purge_cdn', ['http:purge_json', 'http:purge_social_extension']);
+  grunt.registerTask('purge_cdn', ['http:purge_json', 'http:purge_social_extension', 'http:purge_auth0_webhook']);
   grunt.registerTask('cdn',       ['copy:release', 'aws_s3:clean', 'aws_s3:publish', 'purge_cdn']);
 };

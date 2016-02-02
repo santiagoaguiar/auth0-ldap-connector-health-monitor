@@ -35,7 +35,7 @@
       "description": "Auth0 global ClientSecret"
     },
     "AUTH0_API_ENDPOINTS": {
-      "description": "Allows you to filter specific API endpoints, comma separated.",
+      "description": "Allows you to filter specific API endpoints, comma separated."
     },
     "WEBHOOK_URL":     {
       "required": true
