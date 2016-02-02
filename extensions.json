@@ -10,39 +10,4 @@
     "auth0",
     "extension"
   ]
-},
-{
-  "title": "Auth0 Webhooks",
-  "name": "auth0-webhooks",
-  "version": "1.0.0",
-  "author": "auth0",
-  "description": "Allows you to define webhooks for Auth0's Management API. It will go through the audit logs and call a webhook for specific events.",
-  "type": "cron",
-  "logoUrl": "https://cdn.auth0.com/extensions/auth0-webhooks/assets/logo.png",
-  "keywords": [
-    "auth0",
-    "extension"
-  ],
-  "schedule": "0 */5 * * * *",
-  "secrets": {
-    "AUTH0_DOMAIN": {
-      "description": "Auth0 domain"
-    },
-    "AUTH0_GLOBAL_CLIENTID": {
-      "description": "Auth0 global ClientID"
-    },
-    "AUTH0_GLOBAL_CLIENTSECRET": {
-      "description": "Auth0 global ClientSecret"
-    },
-    "AUTH0_API_ENDPOINTS": {
-      "description": "Allows you to filter specific API endpoints, comma separated."
-    },
-    "WEBHOOK_URL":     {
-      "required": true
-    },
-    "WEBHOOK_CONCURRENT_CALLS":     {
-      "description": "The maximum concurrent calls that will be made to your webhook",
-      "default": 5
-    }
-  }
 }]
