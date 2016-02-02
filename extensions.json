@@ -12,64 +12,37 @@
   ]
 },
 {
-  "title": "Dummy",
-  "name": "dummy",
-  "version": "2.0.0",
-  "author": "auth0",
-  "description": "Whatever.",
-  "type": "application",
-  "keywords": [
-    "auth0",
-    "extension"
-  ],
-  "secrets": {
-    "AUTH0_DOMAIN": {
-      "description": "Your Auth0 domain"
-    },
-    "AUTH0_GLOBAL_CLIENTID": {
-      "description": "Your global ClientID"
-    },
-    "AUTH0_GLOBAL_CLIENTSECRET": {
-      "description": "Your global ClientSecret"
-    },
-    "S3_ACCESS_KEY": {
-      "description": "S3 Access Key",
-      "required": true
-    },
-    "S3_SECRET":     {
-      "description": "S3 Secret",
-      "required": true
-    },
-    "S3_BUCKET":     {
-      "description": "S3 Bucket name",
-      "default": "my-bucket"
-    }
-  }
-},
-{
-  "title": "Cron",
-  "name": "cron",
+  "title": "Auth0 Webhooks",
+  "name": "auth0-webhooks",
   "version": "1.0.0",
   "author": "auth0",
-  "description": "Whatever.",
+  "description": "Allows you to define webhooks for Auth0's Management API. It will go through the audit logs and call a webhook for specific events.",
   "type": "cron",
+  "logoUrl": "https://cdn.auth0.com/extensions/auth0-webhooks/assets/logo.png",
   "keywords": [
     "auth0",
     "extension"
   ],
-  "schedule": "0 */1 * * * *",
+  "schedule": "0 */5 * * * *",
   "secrets": {
-    "S3_ACCESS_KEY": {
-      "description": "S3 Access Key",
+    "AUTH0_DOMAIN": {
+      "description": "Auth0 domain"
+    },
+    "AUTH0_GLOBAL_CLIENTID": {
+      "description": "Auth0 global ClientID"
+    },
+    "AUTH0_GLOBAL_CLIENTSECRET": {
+      "description": "Auth0 global ClientSecret"
+    },
+    "AUTH0_API_ENDPOINTS": {
+      "description": "Allows you to filter specific API endpoints, comma separated.",
+    },
+    "WEBHOOK_URL":     {
       "required": true
     },
-    "S3_SECRET":     {
-      "description": "S3 Secret",
-      "required": true
-    },
-    "S3_BUCKET":     {
-      "description": "S3 Bucket name",
-      "default": "my-bucket"
+    "WEBHOOK_CONCURRENT_CALLS":     {
+      "description": "The maximum concurrent calls that will be made to your webhook",
+      "default": 5
     }
   }
 }]
