@@ -24,10 +24,12 @@
   ],
   "secrets": {
     "S3_ACCESS_KEY": {
-      "description": "S3 Access Key"
+      "description": "S3 Access Key",
+      "required": true
     },
     "S3_SECRET":     {
-      "description": "S3 Secret"
+      "description": "S3 Secret",
+      "required": true
     },
     "S3_BUCKET":     {
       "description": "S3 Bucket name",
@@ -49,10 +51,12 @@
   "schedule": "0 */1 * * * *",
   "secrets": {
     "S3_ACCESS_KEY": {
-      "description": "S3 Access Key"
+      "description": "S3 Access Key",
+      "required": true
     },
     "S3_SECRET":     {
-      "description": "S3 Secret"
+      "description": "S3 Secret",
+      "required": true
     },
     "S3_BUCKET":     {
       "description": "S3 Bucket name",
