@@ -1,14 +1,6 @@
 var expect     = require('chai').expect
 var extensions = require('./extensions.json');
 
-// "title": "Auth0 Webhooks",
-// "name": "auth0-webhooks",
-// "version": "1.0.0",
-// "author": "auth0",
-
-// "description": "Allows you to define webhooks for Auth0's Management API. It will go through the audit logs and call a webhook for specific events.",
-// "type": "cron",
-
 describe('Check scheme for each', function () {
   function iterator(callback) {
     extensions.forEach(function (ext) {
