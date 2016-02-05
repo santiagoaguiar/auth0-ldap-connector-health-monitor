@@ -10,8 +10,7 @@
     "auth0",
     "extension"
   ]
-},
-{
+}, {
   "title": "Dummy",
   "name": "dummy",
   "version": "3.0.0",
@@ -23,14 +22,13 @@
       "description": "S3 Access Key",
       "required": true
     },
-    "S3_SECRET":     {
+    "S3_SECRET": {
       "description": "S3 Secret",
       "required": true
     },
-    "S3_BUCKET":     {
+    "S3_BUCKET": {
       "description": "S3 Bucket name",
-      "default": "my-bucket",
+      "default": "my-bucket"
     }
   }
-}
-]
+}]
