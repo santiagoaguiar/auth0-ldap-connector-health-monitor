@@ -1,14 +1,8 @@
 module.exports = function (grunt) {
-  var path = require('path');
-  var join = path.join;
-  var fs = require('fs');
-  var read = fs.readFileSync;
-
+  var request   = require('superagent-bluebird-promise');
+  var Promise   = require('bluebird');
   var DEV_PATH  = 'extensions/develop/extensions.json';
   var BASE_PATH = 'extensions/extensions.json';
-
-  var pkg = require('./package');
-  var path = require('path');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -70,21 +64,9 @@ module.exports = function (grunt) {
           method: 'DELETE'
         }
       },
-      purge_js_dev: {
+      purge_json_dev: {
         options: {
           url: process.env.CDN_ROOT + '/' + DEV_PATH,
-          method: 'DELETE'
-        }
-      },
-      purge_social_extension: {
-        options: {
-          url: process.env.CDN_ROOT + '/' + 'custom-social-connections/custom-social-connections-1.0.js',
-          method: 'DELETE'
-        }
-      },
-      purge_auth0_webhook: {
-        options: {
-          url: process.env.CDN_ROOT + '/' + 'auth0-webhooks/auth0-webhooks-1.0.js',
           method: 'DELETE'
         }
       }
@@ -95,8 +77,34 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-aws-s3');
   grunt.loadNpmTasks('grunt-http');
 
-  grunt.registerTask('purge_cdn', ['http:purge_json', 'http:purge_social_extension', 'http:purge_auth0_webhook']);
-  grunt.registerTask('cdn',       ['copy:release', 'aws_s3:clean', 'aws_s3:publish', 'purge_cdn']);
+  grunt.registerTask('purge-extensions', function () {
+    var done       = this.async();
+    var promises   = [];
+    var extensions = grunt.file.readJSON('extensions.json');
 
-  grunt.registerTask('cdn-dev',   ['copy:release', 'aws_s3:clean_dev', 'aws_s3:publish_dev', 'http:purge_js_dev']);
+    extensions.forEach(function (ext) {
+      var name    = ext.name;
+      var version = ext.version.split('.').slice(0,2).join('.');
+      var cdn     = process.env.CDN_ROOT;
+      var url     = cdn + '/extensions/' + name + '/' + name + '-' + version + '.js';
+
+      grunt.log.ok(url);
+
+      promises.push(request.del(url).promise());
+    });
+
+    Promise.all(promises)
+      .then(function () {
+        done();
+      })
+      .catch(function (err) {
+        grunt.log.subhead('Error purging extensions');
+        grunt.log.writeln();
+        grunt.log.error(err);
+      });
+  });
+
+  grunt.registerTask('cdn',       ['copy:release', 'aws_s3:clean', 'aws_s3:publish', 'http:purge_json', 'purge-extensions']);
+
+  grunt.registerTask('cdn-dev',   ['copy:release', 'aws_s3:clean_dev', 'aws_s3:publish_dev', 'http:purge_json_dev']);
 };
