@@ -13,7 +13,7 @@
 }, {
   "title": "Dummy",
   "name": "dummy",
-  "version": "13.0.0",
+  "version": "14.0.0",
   "author": "auth0",
   "description": "Whatever.",
   "type": "application",
