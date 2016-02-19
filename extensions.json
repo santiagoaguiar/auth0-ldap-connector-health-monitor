@@ -67,7 +67,6 @@
       "description": "Auth0 global ClientSecret"
     },
     "CONTAINER_URL": {
-      "description": "Container Url",
       "required": true
     }
   }

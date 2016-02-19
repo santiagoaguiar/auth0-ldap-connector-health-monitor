@@ -106,5 +106,5 @@ module.exports = function (grunt) {
 
   grunt.registerTask('cdn',       ['copy:release', 'aws_s3:clean', 'aws_s3:publish', 'http:purge_json', 'purge-extensions']);
 
-  grunt.registerTask('cdn-dev',   ['copy:release', 'aws_s3:clean_dev', 'aws_s3:publish_dev', 'http:purge_json_dev']);
+  grunt.registerTask('cdn-dev',   ['copy:release', 'aws_s3:clean_dev', 'aws_s3:publish_dev', 'http:purge_json_dev', 'purge-extensions']);
 };
