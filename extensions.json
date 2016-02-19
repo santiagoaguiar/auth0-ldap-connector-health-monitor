@@ -3,7 +3,7 @@
   "name": "custom-social-connections",
   "version": "1.0.5",
   "author": "auth0",
-  "description": "This application gives Auth0 customers the possibility to manage custom social connections in an easy way.",
+  "description": "This application gives Auth0 customers the possibility to manage custom social connections in an easy way",
   "type": "application",
   "logoUrl": "https://cdn.auth0.com/extensions/custom-social-connections/assets/logo.png",
   "keywords": [
@@ -50,7 +50,7 @@
   "name": "auth0-ldap-conector-health-monitor",
   "version": "1.0.0",
   "author": "auth0",
-  "description": "This extension can monitor the health of your AD Connectors from Auth0's point of view (as opposed to monitoring the connector from within your own infrastructure).",
+  "description": "This extension can monitor the health of your AD Connectors from Auth0's point of view",
   "type": "application",
   "keywords": [
     "auth0",
