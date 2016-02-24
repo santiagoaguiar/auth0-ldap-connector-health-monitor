@@ -5,7 +5,8 @@
   "author": "auth0",
   "description": "This application gives Auth0 customers the possibility to manage custom social connections in an easy way",
   "type": "application",
-  "logoUrl": "https://cdn.auth0.com/extensions/custom-social-connections/assets/logo.png",
+  "logoUrl": "https://cdn.auth0.com/extensions/custom-social-connections/assets/logo.svg",
+  "repository": "https://github.com/auth0/custom-social-connections",
   "keywords": [
     "auth0",
     "extension"
@@ -17,7 +18,8 @@
   "author": "auth0",
   "description": "Allows you to define webhooks for Auth0's Management API. It will go through the audit logs and call a webhook for specific events.",
   "type": "cron",
-  "logoUrl": "https://cdn.auth0.com/extensions/auth0-webhooks/assets/logo.png",
+  "logoUrl": "https://cdn.auth0.com/extensions/auth0-webhooks/assets/logo.svg",
+  "repository": "https://github.com/auth0/auth0-webhooks",
   "keywords": [
     "auth0",
     "extension"
@@ -52,6 +54,7 @@
   "author": "auth0",
   "description": "This extension will expose an endpoint you can use from your monitoring tool to monitor your AD/LDAP Connectors",
   "type": "application",
+  "repository": "https://github.com/auth0/auth0-ldap-conector-health-monitor",
   "keywords": [
     "auth0",
     "extension"
@@ -74,6 +77,7 @@
   "author": "auth0",
   "description": "This extension will take all of your Auth0 logs and export them to Application Insights",
   "type": "cron",
+  "repository": "https://github.com/auth0/auth0-logs-to-application-insights",
   "keywords": [
     "auth0",
     "extension"
@@ -101,6 +105,7 @@
   "author": "auth0",
   "description": "This extension will take all of your Auth0 logs and export them to Azure Blob Storage",
   "type": "cron",
+  "repository": "https://github.com/auth0/auth0-logs-to-azure",
   "keywords": [
     "auth0",
     "extension"

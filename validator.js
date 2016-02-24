@@ -11,7 +11,7 @@ describe('Check scheme for each', function () {
   describe('extension', function () {
 
     it('should be compliant with the properties scheme', function () {
-      var properties = ['title', 'name', 'version', 'author', 'description', 'type', 'logoUrl', 'keywords', 'schedule', 'secrets'];
+      var properties = ['title', 'name', 'version', 'author', 'description', 'type', 'logoUrl', 'keywords', 'schedule', 'secrets', 'repository'];
 
       iterator(function (ext) {
         Object.keys(ext).forEach(function (key) {
