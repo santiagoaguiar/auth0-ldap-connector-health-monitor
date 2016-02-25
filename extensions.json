@@ -18,8 +18,8 @@
   "author": "auth0",
   "description": "Allows you to define webhooks for Auth0's Management API. It will go through the audit logs and call a webhook for specific events.",
   "type": "cron",
-  "logoUrl": "https://cdn.auth0.com/extensions/auth0-webhooks/assets/logo.svg",
-  "repository": "https://github.com/auth0/auth0-webhooks",
+  "logoUrl": "https://cdn.auth0.com/extensions/auth0-management-api-webhooks/assets/logo.svg",
+  "repository": "https://github.com/auth0/auth0-management-api-webhooks",
   "keywords": [
     "auth0",
     "extension"
@@ -143,6 +143,7 @@
   "author": "auth0",
   "description": "Allows you to define webhooks for Auth0's Authentication API. It will go through the audit logs and call a webhook for specific events.",
   "type": "cron",
+  "repository": "https://github.com/auth0/auth0-authentication-api-webhooks",
   "keywords": [
     "auth0",
     "extension"
