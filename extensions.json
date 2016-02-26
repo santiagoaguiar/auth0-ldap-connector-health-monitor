@@ -55,6 +55,7 @@
   "description": "This extension will expose an endpoint you can use from your monitoring tool to monitor your AD/LDAP Connectors",
   "type": "application",
   "repository": "https://github.com/auth0/auth0-ldap-conector-health-monitor",
+  "logoUrl": "https://cdn.auth0.com/extensions/auth0-ldap-conector-health-monitor/assets/logo.svg",
   "keywords": [
     "auth0",
     "extension"
@@ -78,7 +79,7 @@
   "description": "This extension will take all of your Auth0 logs and export them to Application Insights",
   "type": "cron",
   "repository": "https://github.com/auth0/auth0-logs-to-application-insights",
-  "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-application-insights/assets/logo.png",
+  "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-application-insights/assets/logo.svg",
   "keywords": [
     "auth0",
     "extension"
@@ -111,7 +112,7 @@
     "auth0",
     "extension"
   ],
-  "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-azure-blob-storage/assets/logo.png",
+  "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-azure-blob-storage/assets/logo.svg",
   "schedule": "0 */5 * * * *",
   "secrets": {
     "AUTH0_DOMAIN": {
@@ -144,6 +145,7 @@
   "description": "Allows you to define webhooks for Auth0's Authentication API. It will go through the audit logs and call a webhook for specific events.",
   "type": "cron",
   "repository": "https://github.com/auth0/auth0-authentication-api-webhooks",
+  "logoUrl": "https://cdn.auth0.com/extensions/auth0-authentication-api-webhooks/assets/logo.svg",
   "keywords": [
     "auth0",
     "extension"
@@ -233,7 +235,7 @@
   "description": "This extension will take all of your Auth0 logs and export them to Loggly",
   "type": "cron",
   "repository": "https://github.com/auth0/auth0-logs-to-loggly",
-  "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-loggly/assets/logo.png",
+  "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-loggly/assets/logo.svg",
   "keywords": [
     "auth0",
     "extension"
