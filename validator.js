@@ -263,7 +263,7 @@ describe('Check scheme for each', function () {
         }
 
         it('should be compliant with the properties scheme', function () {
-          var properties = ['description', 'readOnly', 'type', 'example', 'required', 'default', 'options'];
+          var properties = ['description', 'readOnly', 'type', 'example', 'required', 'default', 'options', 'allowMultiple'];
 
           secretIterator(function (secret) {
             Object.keys(secret).forEach(function (key) {

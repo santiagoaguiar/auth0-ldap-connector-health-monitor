@@ -170,8 +170,9 @@
       "description": "This allows you to specify the log level of events that need to be sent",
       "example": "e.g.: 1 for Debug messages",
       "type": "select",
+      "allowMultiple": true,
       "options": [
-        {"value": "",  "text": ""},
+        {"value": "-", "text": ""},
         {"value": "1", "text": "Debug"},
         {"value": "2", "text": "Info"},
         {"value": "3", "text": "Error"},
@@ -182,8 +183,9 @@
       "description": "If you only want to send events with a specific type (eg: failed logins)",
       "example": "e.g.: 's' for Success Login",
       "type": "select",
+      "allowMultiple": true,
       "options": [
-        {"value": "",          "text": ""},
+        {"value": "-",         "text": ""},
         {"value": "s",         "text": "Success Login (Debug)"},
         {"value": "seacft",    "text": "Success Exchange (Debug)"},
         {"value": "feacft",    "text": "Failed Exchange (Error)"},
