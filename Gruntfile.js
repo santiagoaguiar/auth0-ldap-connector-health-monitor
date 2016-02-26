@@ -77,6 +77,33 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-aws-s3');
   grunt.loadNpmTasks('grunt-http');
 
+  grunt.registerTask('purge-extensions-logos', function () {
+    var done       = this.async();
+    var promises   = [];
+    var extensions = grunt.file.readJSON('extensions.json');
+
+    extensions.forEach(function (ext) {
+      var name    = ext.name;
+      var version = ext.version.split('.').slice(0,2).join('.');
+      var cdn     = process.env.CDN_ROOT;
+      var url     = cdn + '/extensions/' + name + '/assets/logo.svg';
+
+      grunt.log.ok(url);
+
+      promises.push(request.del(url).promise());
+    });
+
+    Promise.all(promises)
+      .then(function () {
+        done();
+      })
+      .catch(function (err) {
+        grunt.log.subhead('Error purging extensions');
+        grunt.log.writeln();
+        grunt.log.error(err);
+      });
+  });
+
   grunt.registerTask('purge-extensions', function () {
     var done       = this.async();
     var promises   = [];
@@ -104,7 +131,7 @@ module.exports = function (grunt) {
       });
   });
 
-  grunt.registerTask('cdn',       ['copy:release', 'aws_s3:clean', 'aws_s3:publish', 'http:purge_json', 'purge-extensions']);
+  grunt.registerTask('cdn',       ['copy:release', 'aws_s3:clean', 'aws_s3:publish', 'http:purge_json', 'purge-extensions', 'purge-extensions-logos']);
 
-  grunt.registerTask('cdn-dev',   ['copy:release', 'aws_s3:clean_dev', 'aws_s3:publish_dev', 'http:purge_json_dev']);
+  grunt.registerTask('cdn-dev',   ['copy:release', 'aws_s3:clean_dev', 'aws_s3:publish_dev', 'http:purge_json_dev', 'purge-extensions', 'purge-extensions-logos']);
 };
