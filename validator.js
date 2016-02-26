@@ -263,7 +263,7 @@ describe('Check scheme for each', function () {
         }
 
         it('should be compliant with the properties scheme', function () {
-          var properties = ['description', 'readOnly', 'type', 'example', 'required', 'default'];
+          var properties = ['description', 'readOnly', 'type', 'example', 'required', 'default', 'options'];
 
           secretIterator(function (secret) {
             Object.keys(secret).forEach(function (key) {
@@ -329,7 +329,15 @@ describe('Check scheme for each', function () {
           it('should be "text" or "password"', function () {
             secretIterator(function (secret) {
               if (secret.type) {
-                expect(secret.type).match(/text|password/);
+                expect(secret.type).match(/text|password|select/);
+              }
+            });
+          });
+
+          it('should exist property "options" if type is "select"', function () {
+            secretIterator(function (secret) {
+              if (secret.type === 'select') {
+                expect(secret).to.have.property('options');
               }
             });
           });

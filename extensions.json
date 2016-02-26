@@ -168,11 +168,60 @@
     },
     "LOG_LEVEL":     {
       "description": "This allows you to specify the log level of events that need to be sent",
-      "example": "e.g.: 1 for Debug messages"
+      "example": "e.g.: 1 for Debug messages",
+      "type": "select",
+      "options": [
+        {"value": "",  "text": ""},
+        {"value": "1", "text": "Debug"},
+        {"value": "2", "text": "Info"},
+        {"value": "3", "text": "Error"},
+        {"value": "4", "text": "Critical"}
+      ]
     },
     "LOG_TYPES":     {
       "description": "If you only want to send events with a specific type (eg: failed logins)",
-      "example": "e.g.: 's' for Success Login"
+      "example": "e.g.: 's' for Success Login",
+      "type": "select",
+      "options": [
+        {"value": "",          "text": ""},
+        {"value": "s",         "text": "Success Login (Debug)"},
+        {"value": "seacft",    "text": "Success Exchange (Debug)"},
+        {"value": "feacft",    "text": "Failed Exchange (Error)"},
+        {"value": "f",         "text": "Failed Login (Error)"},
+        {"value": "w",         "text": "Warnings During Login (Info)"},
+        {"value": "du",        "text": "Deleted User (Debug)"},
+        {"value": "fu",        "text": "Failed Login (invalid email/username) (Error)"},
+        {"value": "fp",        "text": "Failed Login (wrong password) (Error)"},
+        {"value": "fc",        "text": "Failed by Connector (Error)"},
+        {"value": "fco",       "text": "Failed by CORS (Error)"},
+        {"value": "con",       "text": "Connector Online (Debug)"},
+        {"value": "coff",      "text": "Connector Offline (Error)"},
+        {"value": "fcpro",     "text": "Failed Connector Provisioning (Critical)"},
+        {"value": "ss",        "text": "Success Signup (Debug)"},
+        {"value": "fs",        "text": "Failed Signup (Error)"},
+        {"value": "cs",        "text": "Code Sent (level: 0)"},
+        {"value": "cls",       "text": "Code/Link Sent (level: 0)"},
+        {"value": "sv",        "text": "Success Verification Email (level: 0)"},
+        {"value": "fv",        "text": "Failed Verification Email (level: 0)"},
+        {"value": "scp",       "text": "Success Change Password (Debug)"},
+        {"value": "fcp",       "text": "Failed Change Password (Error)"},
+        {"value": "sce",       "text": "Success Change Email (Debug)"},
+        {"value": "fce",       "text": "Failed Change Email (Error)"},
+        {"value": "scu",       "text": "Success Change Username (Debug)"},
+        {"value": "fcu",       "text": "Failed Change Username (Error)"},
+        {"value": "scpn",      "text": "Success Change Phone Number (Debug)"},
+        {"value": "fcpn",      "text": "Failed Change Phone Number (Error)"},
+        {"value": "svr",       "text": "Success Verification Email Request (level: 0)"},
+        {"value": "fvr",       "text": "Failed Verification Email Request (Error)"},
+        {"value": "scpr",      "text": "Success Change Password Request (level: 0)"},
+        {"value": "fcpr",      "text": "Failed Change Password Request (Error)"},
+        {"value": "fn",        "text": "Failed Sending Notification (Error)"},
+        {"value": "limit_wc",  "text": "Blocked Account (Critical)"},
+        {"value": "limit_ui",  "text": "Too Many Calls to /userinfo (Critical)"},
+        {"value": "api_limit", "text": "Rate Limit On API (Critical)"},
+        {"value": "sdu",       "text": "Successful User Deletion (Debug)"},
+        {"value": "fdu",       "text": "Failed User Deletion (Error)"}
+      ]
     }
   }
 }, {
