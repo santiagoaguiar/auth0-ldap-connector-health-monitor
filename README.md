@@ -1,5 +1,7 @@
 # Auth0 - AD/LDAP Connector Health Webtask
 
+[![Auth0 Extensions](http://cdn.auth0.com/extensions/assets/badge.svg)](https://sandbox.it.auth0.com/api/run/auth0-extensions/extensions-badge?webtask_no_cache=1)
+
 This extension will expose an endpoint you can use from your monitoring tool to monitor your AD/LDAP Connectors
 
 ## Deploy to Webtask.io
