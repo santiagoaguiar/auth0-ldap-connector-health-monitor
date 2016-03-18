@@ -24,7 +24,7 @@
     "auth0",
     "extension"
   ],
-  "schedule": "0 */5 * * * *",
+  "schedule": "*/5 * * * *",
   "secrets": {
     "AUTH0_DOMAIN": {
       "description": "Auth0 domain"
@@ -84,7 +84,7 @@
     "auth0",
     "extension"
   ],
-  "schedule": "0 */5 * * * *",
+  "schedule": "*/5 * * * *",
   "secrets": {
     "AUTH0_DOMAIN": {
       "description": "Auth0 domain"
@@ -113,7 +113,7 @@
     "extension"
   ],
   "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-azure-blob-storage/assets/logo.svg",
-  "schedule": "0 */5 * * * *",
+  "schedule": "*/5 * * * *",
   "secrets": {
     "AUTH0_DOMAIN": {
       "description": "Auth0 domain"
@@ -150,7 +150,7 @@
     "auth0",
     "extension"
   ],
-  "schedule": "0 */5 * * * *",
+  "schedule": "*/5 * * * *",
   "secrets": {
     "AUTH0_DOMAIN": {
       "description": "Auth0 domain"
@@ -240,7 +240,7 @@
     "auth0",
     "extension"
   ],
-  "schedule": "0 */5 * * * *",
+  "schedule": "*/5 * * * *",
   "secrets": {
     "AUTH0_DOMAIN": {
       "description": "Auth0 domain"
@@ -330,7 +330,7 @@
     "auth0",
     "extension"
   ],
-  "schedule": "0 */5 * * * *",
+  "schedule": "*/5 * * * *",
   "secrets": {
     "AUTH0_DOMAIN": {
       "description": "Auth0 domain"
