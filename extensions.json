@@ -568,7 +568,7 @@
   "author": "auth0",
   "description": "This extension allows you to import/export users from/to your account.",
   "type": "application",
-  "logoUrl": "http://cdn.auth0.com/extensions/auth0-user-import-export/assets/logo.svg",
+  "logoUrl": "https://cdn.auth0.com/extensions/auth0-user-import-export/assets/logo.svg",
   "initialUrlPath": "/login",
   "repository": "https://github.com/auth0/auth0-user-import-export-extension",
   "keywords": [
