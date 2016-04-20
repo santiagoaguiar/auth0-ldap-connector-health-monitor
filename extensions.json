@@ -257,6 +257,9 @@
     "auth0",
     "extension"
   ],
+  "auth0": {
+    "scopes": "read:logs"
+  },
   "schedule": "*/5 * * * *",
   "secrets": {
     "AUTH0_DOMAIN": {
