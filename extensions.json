@@ -584,7 +584,7 @@
 }, {
   "title": "Auth0 Logs to Sumologic",
   "name": "auth0-logs-to-sumologic",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "auth0",
   "description": "This extension will take all of your Auth0 logs and export them to Sumologic",
   "type": "cron",
@@ -593,6 +593,9 @@
     "auth0",
     "extension"
   ],
+  "auth0": {
+    "scopes": "read:logs"
+  },
   "schedule": "0 */5 * * * *",
   "secrets": {
     "AUTH0_DOMAIN": {
