@@ -1,4 +1,19 @@
 [{
+  "title": "Real-time Webtask Logs",
+  "name": "auth0-extension-realtime-logs",
+  "version": "1.0.0",
+  "author": "Auth0, Inc",
+  "description": "Access real-time webtask logs",
+  "type": "application",
+  "repository": "https://github.com/auth0/auth0-extension-realtime-logs",
+  "keywords": [
+    "auth0",
+    "extension",
+    "webtask",
+    "logs",
+    "real-time"
+  ]
+}, {
   "title": "Auth0 Authorization",
   "name": "auth0-authz",
   "version": "1.4.1",
