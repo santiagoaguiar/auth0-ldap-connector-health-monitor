@@ -333,6 +333,7 @@
   "description": "This extension will take all of your Auth0 logs and export them to Papertrail",
   "type": "cron",
   "repository": "https://github.com/auth0/auth0-logs-to-papertrail",
+  "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-papertrail/assets/logo.png",
   "keywords": [
     "auth0",
     "extension"
@@ -574,6 +575,7 @@
   "description": "This extension will take all of your Auth0 logs and export them to Sumologic",
   "type": "cron",
   "repository": "https://github.com/auth0/auth0-logs-to-sumologic",
+  "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-sumologic/assets/logo.png",
   "keywords": [
     "auth0",
     "extension"
@@ -790,6 +792,7 @@
   "description": "This extension will take all of your Auth0 logs and export them to Splunk",
   "type": "cron",
   "repository": "https://github.com/auth0/auth0-logs-to-splunk",
+  "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-splunk/assets/logo.png",
   "keywords": [
     "auth0",
     "extension"
@@ -1017,6 +1020,7 @@
   "description": "This extension will take all of your Auth0 logs and export them to Logstash",
   "type": "cron",
   "repository": "https://github.com/auth0/auth0-logs-to-logstash",
+  "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-logstash/assets/logo.png",
   "keywords": [
     "auth0",
     "extension"
@@ -1238,6 +1242,7 @@
   "description": "This extension will take all of your Auth0 logs and export them to Mixpanel",
   "type": "cron",
   "repository": "https://github.com/auth0/auth0-logs-to-mixpanel",
+  "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-mixpanel/assets/logo.png",
   "keywords": [
     "auth0",
     "extension"
