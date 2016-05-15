@@ -28,7 +28,8 @@
     "repository": "https://github.com/auth0/custom-social-connections",
     "keywords": [
       "auth0",
-      "extension"
+      "extension",
+      "custom-social-connections"
     ]
   },
   {
