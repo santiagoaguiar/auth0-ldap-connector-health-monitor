@@ -9,6 +9,7 @@
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-authz/assets/logo.svg",
     "initialUrlPath": "/admins/login",
     "repository": "https://github.com/auth0/auth0-authorization-extension",
+    "docsUrl": "https://auth0.com/docs//extensions/authorization-extension",
     "keywords": [
       "auth0",
       "extension"
@@ -26,6 +27,7 @@
     "type": "application",
     "logoUrl": "https://cdn.auth0.com/extensions/custom-social-connections/assets/logo.svg",
     "repository": "https://github.com/auth0/custom-social-connections",
+    "docsUrl": "https://auth0.com/docs/extensions/custom-social-extensions",
     "keywords": [
       "auth0",
       "extension"
@@ -40,6 +42,7 @@
     "type": "cron",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-webhooks/assets/logo.svg",
     "repository": "https://github.com/auth0/auth0-management-api-webhooks",
+    "docsUrl": "https://auth0.com/docs/extensions/management-api-webhooks",
     "keywords": [
       "auth0",
       "extension"
@@ -74,6 +77,7 @@
     "description": "This extension will expose an endpoint you can use from your monitoring tool to monitor your AD/LDAP Connectors",
     "type": "application",
     "repository": "https://github.com/auth0/auth0-ldap-conector-health-monitor",
+    "docsUrl": "https://auth0.com/docs/extensions/adldap-connector",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-ldap-conector-health-monitor/assets/logo.svg",
     "keywords": [
       "auth0",
@@ -99,6 +103,7 @@
     "description": "This extension will take all of your Auth0 logs and export them to Application Insights",
     "type": "cron",
     "repository": "https://github.com/auth0/auth0-logs-to-application-insights",
+    "docsUrl": "https://auth0.com/docs/extensions/application-insight",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-application-insights/assets/logo.svg",
     "keywords": [
       "auth0",
@@ -127,6 +132,7 @@
     "description": "This extension will take all of your Auth0 logs and export them to Azure Blob Storage",
     "type": "cron",
     "repository": "https://github.com/auth0/auth0-logs-to-azure-blob-storage",
+    "docsUrl": "https://auth0.com/docs/extensions/azure-blob-storage",
     "keywords": [
       "auth0",
       "extension"
@@ -163,6 +169,7 @@
     "description": "Allows you to define webhooks for Auth0's Authentication API. It will go through the audit logs and call a webhook for specific events.",
     "type": "cron",
     "repository": "https://github.com/auth0/auth0-authentication-api-webhooks",
+    "docsUrl": "https://auth0.com/docs/extensions/authentication-api-webhooks",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-authentication-api-webhooks/assets/logo.svg",
     "keywords": [
       "auth0",
@@ -384,6 +391,7 @@
     "description": "This extension will take all of your Auth0 logs and export them to Loggly",
     "type": "cron",
     "repository": "https://github.com/auth0/auth0-logs-to-loggly",
+    "docsUrl": "https://auth0.com/docs/extensions/loggly",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-loggly/assets/logo.svg",
     "keywords": [
       "auth0",
@@ -606,6 +614,7 @@
     "description": "This extension will take all of your Auth0 logs and export them to Papertrail",
     "type": "cron",
     "repository": "https://github.com/auth0/auth0-logs-to-papertrail",
+    "docsUrl": "https://auth0.com/docs/extensions/papertrail",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-papertrail/assets/logo.png",
     "keywords": [
       "auth0",
@@ -834,6 +843,7 @@
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-user-import-export/assets/logo.svg",
     "initialUrlPath": "/login",
     "repository": "https://github.com/auth0/auth0-user-import-export-extension",
+    "docsUrl": "https://auth0.com/docs/extensions/user-import-export",
     "keywords": [
       "auth0",
       "extension"
