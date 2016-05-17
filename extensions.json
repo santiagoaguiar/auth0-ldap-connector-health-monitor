@@ -1528,6 +1528,7 @@
     "description": "This extension will take all of your Auth0 logs and export them to Mixpanel",
     "type": "cron",
     "repository": "https://github.com/auth0/auth0-logs-to-mixpanel",
+    "docsUrl": "https://auth0.com/docs/extensions/mixpanel",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-mixpanel/assets/logo.png",
     "keywords": [
       "auth0",
