@@ -853,11 +853,11 @@
     }
   },
   {
-    "title": "Auth0 Logs to Sumologic",
+    "title": "Auth0 Logs to Sumo Logic",
     "name": "auth0-logs-to-sumologic",
     "version": "1.1.0",
     "author": "auth0",
-    "description": "This extension will take all of your Auth0 logs and export them to Sumologic",
+    "description": "This extension will take all of your Auth0 logs and export them to Sumo Logic",
     "type": "cron",
     "repository": "https://github.com/auth0/auth0-logs-to-sumologic",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-sumologic/assets/logo.png",
@@ -875,7 +875,7 @@
         "default": 100
       },
       "SUMOLOGIC_URL": {
-        "description": "Sumologic URL - this is your Sumologic HTTP Collector Endpoint",
+        "description": "Sumo Logic URL - this is your Sumo Logic HTTP Collector Endpoint",
         "required": true
       },
       "LOG_LEVEL": {
