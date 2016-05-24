@@ -1753,6 +1753,7 @@
     "description": "Access real-time webtask logs",
     "type": "application",
     "repository": "https://github.com/auth0/auth0-extension-realtime-logs",
+    "logoUrl": "https://cdn.auth0.com/extensions/auth0-extension-realtime-logs/assets/logo.svg",
     "keywords": [
       "auth0",
       "extension",
@@ -1769,6 +1770,7 @@
     "description": "This extension will take all of your Auth0 logs and export them to Logentries",
     "type": "cron",
     "repository": "https://github.com/auth0/auth0-logs-to-logentries",
+    "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-logentries/assets/logo.svg",
     "keywords": [
       "auth0",
       "extension"
