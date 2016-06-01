@@ -862,6 +862,7 @@
     "type": "cron",
     "repository": "https://github.com/auth0/auth0-logs-to-sumologic",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-sumologic/assets/logo.png",
+    "docsUrl": "https://auth0.com/docs/extensions/sumologic",
     "keywords": [
       "auth0",
       "extension"
