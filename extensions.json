@@ -602,6 +602,66 @@
           {
             "value": "fdu",
             "text": "Failed User Deletion (Error)"
+          },
+          {
+            "value": "gd_unenroll",
+            "text": "When a device account is deleted"
+          },
+          {
+            "value": "gd_update_device_account",
+            "text": "When a device account is updated"
+          },
+          {
+            "value": "gd_send_pn",
+            "text": "When a push notification is sent"
+          },
+          {
+            "value": "gd_send_sms",
+            "text": "When a SMS is sent"
+          },
+          {
+            "value": "gd_start_auth",
+            "text": "Start second factor authentication"
+          },
+          {
+            "value": "gd_start_enroll",
+            "text": "Second factor auth enrollment is started"
+          },
+          {
+            "value": "gd_module_switch",
+            "text": "When changing feature config"
+          },
+          {
+            "value": "gd_tenant_update",
+            "text": "When tenant info has been updated"
+          },
+          {
+            "value": "gd_user_delete",
+            "text": "When calling (user delete => unenroll)"
+          },
+          {
+            "value": "gd_auth_failed",
+            "text": "When second factor login has failed"
+          },
+          {
+            "value": "gd_auth_succeed",
+            "text": "When second factor authentication has succeeded"
+          },
+          {
+            "value": "gd_recovery_succeed",
+            "text": "Recovery succeeded"
+          },
+          {
+            "value": "gd_recovery_failed",
+            "text": "Failed recovery"
+          },
+          {
+            "value": "gd_otp_rate_limit_exceed",
+            "text": "When One Time Password fails validation because rate limit is exceeded"
+          },
+          {
+            "value": "gd_recovery_rate_limit_exceed",
+            "text": "When recovery validation fails because rate limit is exceeded"
           }
         ]
       }
@@ -829,6 +889,66 @@
           {
             "value": "fdu",
             "text": "Failed User Deletion (Error)"
+          },
+          {
+            "value": "gd_unenroll",
+            "text": "When a device account is deleted"
+          },
+          {
+            "value": "gd_update_device_account",
+            "text": "When a device account is updated"
+          },
+          {
+            "value": "gd_send_pn",
+            "text": "When a push notification is sent"
+          },
+          {
+            "value": "gd_send_sms",
+            "text": "When a SMS is sent"
+          },
+          {
+            "value": "gd_start_auth",
+            "text": "Start second factor authentication"
+          },
+          {
+            "value": "gd_start_enroll",
+            "text": "Second factor auth enrollment is started"
+          },
+          {
+            "value": "gd_module_switch",
+            "text": "When changing feature config"
+          },
+          {
+            "value": "gd_tenant_update",
+            "text": "When tenant info has been updated"
+          },
+          {
+            "value": "gd_user_delete",
+            "text": "When calling (user delete => unenroll)"
+          },
+          {
+            "value": "gd_auth_failed",
+            "text": "When second factor login has failed"
+          },
+          {
+            "value": "gd_auth_succeed",
+            "text": "When second factor authentication has succeeded"
+          },
+          {
+            "value": "gd_recovery_succeed",
+            "text": "Recovery succeeded"
+          },
+          {
+            "value": "gd_recovery_failed",
+            "text": "Failed recovery"
+          },
+          {
+            "value": "gd_otp_rate_limit_exceed",
+            "text": "When One Time Password fails validation because rate limit is exceeded"
+          },
+          {
+            "value": "gd_recovery_rate_limit_exceed",
+            "text": "When recovery validation fails because rate limit is exceeded"
           }
         ]
       }
@@ -1066,6 +1186,66 @@
           {
             "value": "fdu",
             "text": "Failed User Deletion (Error)"
+          },
+          {
+            "value": "gd_unenroll",
+            "text": "When a device account is deleted"
+          },
+          {
+            "value": "gd_update_device_account",
+            "text": "When a device account is updated"
+          },
+          {
+            "value": "gd_send_pn",
+            "text": "When a push notification is sent"
+          },
+          {
+            "value": "gd_send_sms",
+            "text": "When a SMS is sent"
+          },
+          {
+            "value": "gd_start_auth",
+            "text": "Start second factor authentication"
+          },
+          {
+            "value": "gd_start_enroll",
+            "text": "Second factor auth enrollment is started"
+          },
+          {
+            "value": "gd_module_switch",
+            "text": "When changing feature config"
+          },
+          {
+            "value": "gd_tenant_update",
+            "text": "When tenant info has been updated"
+          },
+          {
+            "value": "gd_user_delete",
+            "text": "When calling (user delete => unenroll)"
+          },
+          {
+            "value": "gd_auth_failed",
+            "text": "When second factor login has failed"
+          },
+          {
+            "value": "gd_auth_succeed",
+            "text": "When second factor authentication has succeeded"
+          },
+          {
+            "value": "gd_recovery_succeed",
+            "text": "Recovery succeeded"
+          },
+          {
+            "value": "gd_recovery_failed",
+            "text": "Failed recovery"
+          },
+          {
+            "value": "gd_otp_rate_limit_exceed",
+            "text": "When One Time Password fails validation because rate limit is exceeded"
+          },
+          {
+            "value": "gd_recovery_rate_limit_exceed",
+            "text": "When recovery validation fails because rate limit is exceeded"
           }
         ]
       }
@@ -1294,6 +1474,66 @@
           {
             "value": "fdu",
             "text": "Failed User Deletion (Error)"
+          },
+          {
+            "value": "gd_unenroll",
+            "text": "When a device account is deleted"
+          },
+          {
+            "value": "gd_update_device_account",
+            "text": "When a device account is updated"
+          },
+          {
+            "value": "gd_send_pn",
+            "text": "When a push notification is sent"
+          },
+          {
+            "value": "gd_send_sms",
+            "text": "When a SMS is sent"
+          },
+          {
+            "value": "gd_start_auth",
+            "text": "Start second factor authentication"
+          },
+          {
+            "value": "gd_start_enroll",
+            "text": "Second factor auth enrollment is started"
+          },
+          {
+            "value": "gd_module_switch",
+            "text": "When changing feature config"
+          },
+          {
+            "value": "gd_tenant_update",
+            "text": "When tenant info has been updated"
+          },
+          {
+            "value": "gd_user_delete",
+            "text": "When calling (user delete => unenroll)"
+          },
+          {
+            "value": "gd_auth_failed",
+            "text": "When second factor login has failed"
+          },
+          {
+            "value": "gd_auth_succeed",
+            "text": "When second factor authentication has succeeded"
+          },
+          {
+            "value": "gd_recovery_succeed",
+            "text": "Recovery succeeded"
+          },
+          {
+            "value": "gd_recovery_failed",
+            "text": "Failed recovery"
+          },
+          {
+            "value": "gd_otp_rate_limit_exceed",
+            "text": "When One Time Password fails validation because rate limit is exceeded"
+          },
+          {
+            "value": "gd_recovery_rate_limit_exceed",
+            "text": "When recovery validation fails because rate limit is exceeded"
           }
         ]
       }
@@ -1516,6 +1756,66 @@
           {
             "value": "fdu",
             "text": "Failed User Deletion (Error)"
+          },
+          {
+            "value": "gd_unenroll",
+            "text": "When a device account is deleted"
+          },
+          {
+            "value": "gd_update_device_account",
+            "text": "When a device account is updated"
+          },
+          {
+            "value": "gd_send_pn",
+            "text": "When a push notification is sent"
+          },
+          {
+            "value": "gd_send_sms",
+            "text": "When a SMS is sent"
+          },
+          {
+            "value": "gd_start_auth",
+            "text": "Start second factor authentication"
+          },
+          {
+            "value": "gd_start_enroll",
+            "text": "Second factor auth enrollment is started"
+          },
+          {
+            "value": "gd_module_switch",
+            "text": "When changing feature config"
+          },
+          {
+            "value": "gd_tenant_update",
+            "text": "When tenant info has been updated"
+          },
+          {
+            "value": "gd_user_delete",
+            "text": "When calling (user delete => unenroll)"
+          },
+          {
+            "value": "gd_auth_failed",
+            "text": "When second factor login has failed"
+          },
+          {
+            "value": "gd_auth_succeed",
+            "text": "When second factor authentication has succeeded"
+          },
+          {
+            "value": "gd_recovery_succeed",
+            "text": "Recovery succeeded"
+          },
+          {
+            "value": "gd_recovery_failed",
+            "text": "Failed recovery"
+          },
+          {
+            "value": "gd_otp_rate_limit_exceed",
+            "text": "When One Time Password fails validation because rate limit is exceeded"
+          },
+          {
+            "value": "gd_recovery_rate_limit_exceed",
+            "text": "When recovery validation fails because rate limit is exceeded"
           }
         ]
       }
@@ -1740,6 +2040,66 @@
           {
             "value": "fdu",
             "text": "Failed User Deletion (Error)"
+          },
+          {
+            "value": "gd_unenroll",
+            "text": "When a device account is deleted"
+          },
+          {
+            "value": "gd_update_device_account",
+            "text": "When a device account is updated"
+          },
+          {
+            "value": "gd_send_pn",
+            "text": "When a push notification is sent"
+          },
+          {
+            "value": "gd_send_sms",
+            "text": "When a SMS is sent"
+          },
+          {
+            "value": "gd_start_auth",
+            "text": "Start second factor authentication"
+          },
+          {
+            "value": "gd_start_enroll",
+            "text": "Second factor auth enrollment is started"
+          },
+          {
+            "value": "gd_module_switch",
+            "text": "When changing feature config"
+          },
+          {
+            "value": "gd_tenant_update",
+            "text": "When tenant info has been updated"
+          },
+          {
+            "value": "gd_user_delete",
+            "text": "When calling (user delete => unenroll)"
+          },
+          {
+            "value": "gd_auth_failed",
+            "text": "When second factor login has failed"
+          },
+          {
+            "value": "gd_auth_succeed",
+            "text": "When second factor authentication has succeeded"
+          },
+          {
+            "value": "gd_recovery_succeed",
+            "text": "Recovery succeeded"
+          },
+          {
+            "value": "gd_recovery_failed",
+            "text": "Failed recovery"
+          },
+          {
+            "value": "gd_otp_rate_limit_exceed",
+            "text": "When One Time Password fails validation because rate limit is exceeded"
+          },
+          {
+            "value": "gd_recovery_rate_limit_exceed",
+            "text": "When recovery validation fails because rate limit is exceeded"
           }
         ]
       }
@@ -1977,6 +2337,66 @@
           {
             "value": "fdu",
             "text": "Failed User Deletion (Error)"
+          },
+          {
+            "value": "gd_unenroll",
+            "text": "When a device account is deleted"
+          },
+          {
+            "value": "gd_update_device_account",
+            "text": "When a device account is updated"
+          },
+          {
+            "value": "gd_send_pn",
+            "text": "When a push notification is sent"
+          },
+          {
+            "value": "gd_send_sms",
+            "text": "When a SMS is sent"
+          },
+          {
+            "value": "gd_start_auth",
+            "text": "Start second factor authentication"
+          },
+          {
+            "value": "gd_start_enroll",
+            "text": "Second factor auth enrollment is started"
+          },
+          {
+            "value": "gd_module_switch",
+            "text": "When changing feature config"
+          },
+          {
+            "value": "gd_tenant_update",
+            "text": "When tenant info has been updated"
+          },
+          {
+            "value": "gd_user_delete",
+            "text": "When calling (user delete => unenroll)"
+          },
+          {
+            "value": "gd_auth_failed",
+            "text": "When second factor login has failed"
+          },
+          {
+            "value": "gd_auth_succeed",
+            "text": "When second factor authentication has succeeded"
+          },
+          {
+            "value": "gd_recovery_succeed",
+            "text": "Recovery succeeded"
+          },
+          {
+            "value": "gd_recovery_failed",
+            "text": "Failed recovery"
+          },
+          {
+            "value": "gd_otp_rate_limit_exceed",
+            "text": "When One Time Password fails validation because rate limit is exceeded"
+          },
+          {
+            "value": "gd_recovery_rate_limit_exceed",
+            "text": "When recovery validation fails because rate limit is exceeded"
           }
         ]
       }
