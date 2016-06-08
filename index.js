@@ -47,14 +47,30 @@ module.exports = (ctx, req, res) => {
         return end(500, { message: 'Error authenticating to the Auth0 API.', details: err.message });
       }
 
+      var connectionUrl = `https://${ctx.data.AUTH0_DOMAIN}/api/connections/${ctx.data.connection}`;
       var monitorUrl = `https://${ctx.data.AUTH0_DOMAIN}/api/connections/${ctx.data.connection}/socket`;
       console.log('Monitoring:', monitorUrl);
 
-      request.get({ url:  monitorUrl, headers: { 'Authorization': `Bearer ${token}`} }, (err, resp, body) => {
+      request.get({
+        url: connectionUrl,
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      }, (err, resp, body) => {
+        body = JSON.parse(body);
+
         if (err) return end(500, { message: 'Error calling the monitoring endpoint.', details: err.message });
-        else if (resp.statusCode === 404) return end(400, { message: 'The connector is offline.' });
-        else if (resp.statusCode === 200) return end(200, { message: 'The connector is online.' });
-        else return end(500, { message: 'Unexpected status received from Auth0.', statusCode: resp.statusCode });
+        else if (resp.statusCode === 404) return end(400, { message: 'The connection does not exist.' });
+        else if (body.strategy !== 'ad' && body.strategy !== 'auht0-adldap') {
+          return end(400, { message: 'The connection is not an AD/LDAP connection.' });
+        }
+
+        request.get({ url: monitorUrl, headers: { 'Authorization': `Bearer ${token}` } }, (err, resp, body) => {
+          if (err) return end(500, { message: 'Error calling the monitoring endpoint.', details: err.message });
+          else if (resp.statusCode === 404) return end(400, { message: 'The connector is offline.' });
+          else if (resp.statusCode === 200) return end(200, { message: 'The connector is online.' });
+          else return end(500, { message: 'Unexpected status received from Auth0.', statusCode: resp.statusCode });
+        });
       });
     });
   };
