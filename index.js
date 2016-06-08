@@ -61,7 +61,7 @@ module.exports = (ctx, req, res) => {
 
         if (err) return end(500, { message: 'Error calling the monitoring endpoint.', details: err.message });
         else if (resp.statusCode === 404) return end(400, { message: 'The connection does not exist.' });
-        else if (body.strategy !== 'ad' && body.strategy !== 'auht0-adldap') {
+        else if (body.strategy !== 'ad' && body.strategy !== 'auth0-adldap') {
           return end(400, { message: 'The connection is not an AD/LDAP connection.' });
         }
 
