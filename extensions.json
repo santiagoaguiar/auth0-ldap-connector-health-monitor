@@ -1549,6 +1549,7 @@
     "description": "This extension will take all of your Auth0 logs and export them to Logstash",
     "type": "cron",
     "repository": "https://github.com/auth0/auth0-logs-to-logstash",
+    "docsUrl": "https://auth0.com/docs/extensions/logstash",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-logstash/assets/logo.png",
     "keywords": [
       "auth0",
