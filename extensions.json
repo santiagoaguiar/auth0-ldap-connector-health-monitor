@@ -45,6 +45,7 @@
     "initialUrlPath": "/login",
     "uninstallConfirmMessage": "Do you really want to uninstall this extension? Doing so will stop any Rules and Database Connection scripts from being deployed from GitHub to Auth0.",
     "repository": "https://github.com/auth0-extensions/auth0-github-deploy",
+    "docsUrl": "https://auth0.com/docs/extensions/github-deploy",
     "keywords": [
       "auth0",
       "extension"
