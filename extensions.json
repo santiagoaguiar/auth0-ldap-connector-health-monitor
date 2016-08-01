@@ -2448,5 +2448,52 @@
         ]
       }
     }
+  },
+  {
+    "title": "Bitbucket Deployments",
+    "name": "auth0-bitbucket-deploy",
+    "version": "1.0.0",
+    "author": "auth0",
+    "description": "This extension gives Auth0 customers the possibility to deploy Rules and Custom Database Connections from Bitbucket.",
+    "type": "application",
+    "logoUrl": "https://cdn.auth0.com/extensions/auth0-bitbucket-deploy/assets/logo.svg",
+    "initialUrlPath": "/login",
+    "uninstallConfirmMessage": "Do you really want to uninstall this extension? Doing so will stop any Rules and Database Connection scripts from being deployed from Bitbucket to Auth0.",
+    "repository": "https://github.com/auth0-extensions/auth0-bitbucket-deploy",
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
+    "auth0": {
+      "createClient": true,
+      "onUninstallPath": "/.extensions/on-uninstall",
+      "scopes": "read:connections update:connections read:rules create:rules update:rules delete:rules delete:clients"
+    },
+    "secrets": {
+      "BITBUCKET_REPOSITORY": {
+        "example": "myorganization/myrepo",
+        "description": "The repository from which you want to deploy rules and database scripts",
+        "required": true
+      },
+      "BITBUCKET_BRANCH": {
+        "description": "The branch we should monitor for commits",
+        "default": "master",
+        "required": true
+      },
+      "BITBUCKET_USER": {
+        "description": "Bitbucket account",
+        "required": true
+      },
+      "BITBUCKET_PASSWORD": {
+        "description": "Bitbucket password",
+        "type": "password",
+        "required": true
+      },
+      "SLACK_INCOMING_WEBHOOK_URL": {
+        "example": "https://hooks.slack.com/services/...",
+        "description": "Webhook URL for Slack used to notify you of successful and failed deployments",
+        "required": false
+      }
+    }
   }
 ]
