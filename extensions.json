@@ -18,6 +18,7 @@
       "scopes": "read:clients read:connections read:rules create:rules update:rules read:users update:users read:device_credentials read:logs"
     }
   },
+
   {
     "title": "Custom Social Connections",
     "name": "custom-social-connections",
