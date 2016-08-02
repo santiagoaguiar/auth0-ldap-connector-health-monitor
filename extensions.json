@@ -8,7 +8,8 @@
     "type": "application",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-authz/assets/logo.svg",
     "initialUrlPath": "/admins/login",
-    "repository": "https://github.com/auth0/auth0-authz",
+    "repository": "https://github.com/auth0/auth0-authorization-extension",
+    "docsUrl": "https://auth0.com/docs//extensions/authorization-extension",
     "keywords": [
       "auth0",
       "extension"
