@@ -2,7 +2,7 @@
   {
     "title": "Auth0 Authorization",
     "name": "auth0-authz",
-    "version": "1.4.2",
+    "version": "1.4.4",
     "author": "auth0",
     "description": "This extension gives Auth0 customers the possibility to manage group memberships for their users.",
     "type": "application",
@@ -2494,24 +2494,6 @@
         "description": "Webhook URL for Slack used to notify you of successful and failed deployments",
         "required": false
       }
-    }
-  },
-  {
-    "title": "Auth0 Authorization",
-    "name": "auth0-authz",
-    "version": "1.4.4",
-    "author": "auth0",
-    "description": "This extension gives Auth0 customers the possibility to manage group memberships for their users.",
-    "type": "application",
-    "logoUrl": "https://cdn.auth0.com/extensions/auth0-authz/assets/logo.svg",
-    "initialUrlPath": "/admins/login",
-    "repository": "https://github.com/auth0/auth0-authz",
-    "keywords": [
-      "auth0",
-      "extension"
-    ],
-    "auth0": {
-      "scopes": "read:clients read:connections read:rules create:rules update:rules read:users update:users read:device_credentials read:logs"
     }
   }
 ]
