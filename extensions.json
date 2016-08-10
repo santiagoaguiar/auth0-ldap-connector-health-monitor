@@ -9,7 +9,7 @@
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-authz/assets/logo.svg",
     "initialUrlPath": "/admins/login",
     "repository": "https://github.com/auth0/auth0-authorization-extension",
-    "docsUrl": "https://auth0.com/docs//extensions/authorization-extension",
+    "docsUrl": "https://auth0.com/docs/extensions/authorization-extension",
     "keywords": [
       "auth0",
       "extension"
@@ -2460,6 +2460,7 @@
     "initialUrlPath": "/login",
     "uninstallConfirmMessage": "Do you really want to uninstall this extension? Doing so will stop any Rules and Database Connection scripts from being deployed from Bitbucket to Auth0.",
     "repository": "https://github.com/auth0-extensions/auth0-bitbucket-deploy",
+    "docsUrl": "https://auth0.com/docs/extensions/bitbucket-deploy",
     "keywords": [
       "auth0",
       "extension"
