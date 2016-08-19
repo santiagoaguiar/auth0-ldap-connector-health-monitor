@@ -2496,5 +2496,41 @@
         "required": false
       }
     }
+  },
+  {
+    "title": "Delegated Administration Dashboard",
+    "name": "auth0-delegated-admin",
+    "version": "1.2.0",
+    "author": "auth0",
+    "description": "This extension allows non-dashboard administrators to manage your users.",
+    "type": "application",
+    "logoUrl": "https://cdn.auth0.com/extensions/auth0-delegated-admin/assets/logo.svg",
+    "initialUrlPath": "/",
+    "repository": "https://github.com/auth0-delegated-administration-extension/auth0-delegated-admin",
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
+    "auth0": {
+      "createClient": true,
+      "onUninstallPath": "/.extensions/on-uninstall",
+      "scopes": "read:clients delete:clients read:connections read:users update:users delete:users create:users read:logs read:device_credentials update:device_credentials delete:device_credentials"
+    },
+    "secrets": {
+      "EXTENSION_CLIENT_ID": {
+        "description": "Client ID of the application you created in the Auth0 Management Dashboard",
+        "required": true
+      },
+      "TITLE": {
+        "description": "Custom title for the dashboard",
+        "example": "Fabrikam User Management",
+        "required": false
+      },
+      "CUSTOM_CSS": {
+        "description": "A CSS file containing custom styles for the extension",
+        "example": "https://cdn.fabrikam.com/static/extensions/theme/fabrikam.css",
+        "required": false
+      }
+    }
   }
 ]
