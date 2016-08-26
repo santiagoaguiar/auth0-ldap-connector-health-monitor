@@ -1329,6 +1329,11 @@
         "required": true,
         "default": 8088
       },
+      "SPLUNK_COLLECTOR_PATH": {
+        "description": "HTTP Collector Path (Endpoint)",
+        "required": false,
+        "default": "/services/collector/event/1.0"
+      },
       "BATCH_SIZE": {
         "description": "The ammount of logs to be read on each execution. Maximun is 100.",
         "default": 100
