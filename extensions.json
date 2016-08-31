@@ -1317,7 +1317,7 @@
     },
     "secrets": {
       "SPLUNK_URL": {
-        "description": "Splunk URL - this is your Splunk HTTP Collector Endpoint",
+        "description": "Splunk URL - this is your Splunk Cloud URL",
         "required": true
       },
       "SPLUNK_TOKEN": {
