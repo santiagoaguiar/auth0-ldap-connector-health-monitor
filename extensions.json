@@ -98,7 +98,7 @@
     },
     "secrets": {
       "BATCH_SIZE": {
-        "description": "The ammount of logs to be read on each execution. Maximun is 100.",
+        "description": "The amount of logs to be read on each execution. Maximum is 100.",
         "default": 100
       },
       "AUTH0_API_ENDPOINTS": {
@@ -160,7 +160,7 @@
     },
     "secrets": {
       "BATCH_SIZE": {
-        "description": "The ammount of logs to be read on each execution. Maximun is 100.",
+        "description": "The amount of logs to be read on each execution. Maximum is 100.",
         "default": 100
       },
       "APPINSIGHTS_INSTRUMENTATIONKEY": {
@@ -189,7 +189,7 @@
     },
     "secrets": {
       "BATCH_SIZE": {
-        "description": "The ammount of logs to be read on each execution. Maximun is 100.",
+        "description": "The amount of logs to be read on each execution. Maximum is 100.",
         "default": 100
       },
       "STORAGE_ACCOUNT_NAME": {
@@ -226,7 +226,7 @@
     },
     "secrets": {
       "BATCH_SIZE": {
-        "description": "The ammount of logs to be read on each execution. Maximun is 100.",
+        "description": "The amount of logs to be read on each execution. Maximum is 100.",
         "default": 100
       },
       "WEBHOOK_URL": {
@@ -448,7 +448,7 @@
     "schedule": "0 */5 * * * *",
     "secrets": {
       "BATCH_SIZE": {
-        "description": "The ammount of logs to be read on each execution. Maximun is 100.",
+        "description": "The amount of logs to be read on each execution. Maximum is 100.",
         "default": 100
       },
       "LOGGLY_CUSTOMER_TOKEN": {
@@ -731,7 +731,7 @@
     },
     "secrets": {
       "BATCH_SIZE": {
-        "description": "The ammount of logs to be read on each execution. Maximun is 100.",
+        "description": "The amount of logs to be read on each execution. Maximum is 100.",
         "default": 100
       },
       "PAPERTRAIL_HOST": {
@@ -1037,7 +1037,7 @@
     "schedule": "0 */5 * * * *",
     "secrets": {
       "BATCH_SIZE": {
-        "description": "The ammount of logs to be read on each execution. Maximun is 100.",
+        "description": "The amount of logs to be read on each execution. Maximum is 100.",
         "default": 100
       },
       "SUMOLOGIC_URL": {
@@ -1335,7 +1335,7 @@
         "default": "/services/collector/event/1.0"
       },
       "BATCH_SIZE": {
-        "description": "The ammount of logs to be read on each execution. Maximun is 100.",
+        "description": "The amount of logs to be read on each execution. Maximum is 100.",
         "default": 100
       },
       "LOG_LEVEL": {
@@ -1610,7 +1610,7 @@
     },
     "secrets": {
       "BATCH_SIZE": {
-        "description": "The ammount of logs to be read on each execution. Maximun is 100.",
+        "description": "The amount of logs to be read on each execution. Maximum is 100.",
         "default": 100
       },
       "LOGSTASH_URL": {
@@ -1902,7 +1902,7 @@
         "type": "password"
       },
       "BATCH_SIZE": {
-        "description": "The ammount of logs to be read on each execution. Maximun is 100.",
+        "description": "The amount of logs to be read on each execution. Maximum is 100.",
         "default": 100
       },
       "LOG_LEVEL": {
@@ -2195,7 +2195,7 @@
     },
     "secrets": {
       "BATCH_SIZE": {
-        "description": "The ammount of logs to be read on each execution. Maximun is 100.",
+        "description": "The amount of logs to be read on each execution. Maximum is 100.",
         "default": 100
       },
       "LOGENTRIES_TOKEN": {
