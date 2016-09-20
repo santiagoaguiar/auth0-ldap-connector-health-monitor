@@ -274,7 +274,7 @@
         "options": [
           {
             "value": "-",
-            "text": ""
+            "text": "All events"
           },
           {
             "value": "s",
