@@ -423,6 +423,10 @@
           {
             "value": "fdu",
             "text": "Failed User Deletion (Error)"
+          },
+          {
+            "value": "pwd_leak",
+            "text": "Leaked credentials detected (Critical)"
           }
         ]
       }
