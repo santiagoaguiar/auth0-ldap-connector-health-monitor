@@ -39,7 +39,7 @@
   {
     "title": "GitHub Deployments",
     "name": "auth0-github-deploy",
-    "version": "1.2.8",
+    "version": "1.3.0",
     "author": "auth0",
     "description": "This extension gives Auth0 customers the possibility to deploy Rules and Custom Database Connections from GitHub.",
     "type": "application",
@@ -2478,7 +2478,7 @@
   {
     "title": "Bitbucket Deployments",
     "name": "auth0-bitbucket-deploy",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "author": "auth0",
     "description": "This extension gives Auth0 customers the possibility to deploy Rules and Custom Database Connections from Bitbucket.",
     "type": "application",
