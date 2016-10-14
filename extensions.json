@@ -39,16 +39,16 @@
   {
     "title": "GitHub Deployments",
     "name": "auth0-github-deploy",
-    "version": "1.3.0",
+    "version": "2.0.1",
     "author": "auth0",
     "description": "This extension gives Auth0 customers the possibility to deploy Rules and Custom Database Connections from GitHub.",
     "type": "application",
-    "category": "source_control",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-github-deploy/assets/logo.svg",
     "initialUrlPath": "/login",
-    "uninstallConfirmMessage": "Do you really want to uninstall this extension? Doing so will stop any Rules and Database Connection scripts from being deployed from GitHub to Auth0.",
-    "repository": "https://github.com/auth0-extensions/auth0-github-deploy",
     "docsUrl": "https://auth0.com/docs/extensions/github-deploy",
+    "uninstallConfirmMessage": "Do you really want to uninstall this extension? Doing so will stop any Rules and Database Connection scripts from being deployed from GitHub to Auth0",
+    "repository": "https://github.com/auth0-extensions/auth0-github-deploy",
+    "useHashName": false,
     "keywords": [
       "auth0",
       "extension"
@@ -56,7 +56,7 @@
     "auth0": {
       "createClient": true,
       "onUninstallPath": "/.extensions/on-uninstall",
-      "scopes": "read:connections update:connections read:rules create:rules update:rules delete:rules delete:clients"
+      "scopes": "read:tenant_settings update:tenant_settings update:clients read:clients read:connections update:connections read:rules create:rules update:rules delete:rules delete:clients"
     },
     "secrets": {
       "GITHUB_REPOSITORY": {
