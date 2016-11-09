@@ -1149,8 +1149,9 @@
   {
     "title": "User Import / Export",
     "name": "auth0-user-import-export",
-    "version": "1.6.0",
+    "version": "1.6.1",
     "author": "auth0",
+    "useHashName": false,
     "description": "This extension allows you to import/export users from/to your account.",
     "type": "application",
     "category": "admin",
