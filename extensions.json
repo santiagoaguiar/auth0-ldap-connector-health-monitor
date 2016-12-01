@@ -2713,7 +2713,7 @@
   {
     "title": "Box Serverless",
     "name": "auth0-box-serverless",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "auth0",
     "description": "Box Extension.",
     "type": "application",
