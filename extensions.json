@@ -2812,5 +2812,41 @@
     "auth0": {
       "scopes": "read:clients read:client_keys"
     }
+  },
+  {
+    "title": "Auth0 SSO Dashboard",
+    "name": "auth0-sso-dashboard",
+    "version": "1.0.0",
+    "author": "Auth0",
+    "description": "This extension provides your users with a dashboard for all of their applications.",
+    "type": "application",
+    "logoUrl": "https://cdn.auth0.com/extensions/auth0-sso-dashboard/assets/logo.svg",
+    "initialUrlPath": "/admins/login",
+    "repository": "https://github.com/auth0-extensions/auth0-sso-dashboard-extension",
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
+    "auth0": {
+      "createClient": true,
+      "onUninstallPath": "/.extensions/on-uninstall",
+      "scopes": "read:clients delete:clients read:connections"
+    },
+    "secrets": {
+      "EXTENSION_CLIENT_ID": {
+        "description": "Client ID of the application you created in the Auth0 Management Dashboard",
+        "required": true
+      },
+      "TITLE": {
+        "description": "Custom title for the dashboard",
+        "example": "Fabrikam SSO Dashboard",
+        "required": false
+      },
+      "CUSTOM_CSS": {
+        "description": "A CSS file containing custom styles for the extension",
+        "example": "https://cdn.fabrikam.com/static/extensions/theme/fabrikam.css",
+        "required": false
+      }
+    }
   }
 ]
