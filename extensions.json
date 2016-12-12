@@ -2814,9 +2814,9 @@
     }
   },
   {
-    "title": "Auth0 SSO Dashboard",
+    "title": "SSO Dashboard",
     "name": "auth0-sso-dashboard",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Auth0",
     "description": "This extension provides your users with a dashboard for all of their applications.",
     "type": "application",
