@@ -1170,6 +1170,7 @@
       "scopes": "create:users read:users read:connections"
     }
   },
+  
   {
     "title": "Auth0 Logs to Sumo Logic",
     "name": "auth0-logs-to-sumologic",
