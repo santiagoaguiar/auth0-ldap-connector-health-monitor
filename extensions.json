@@ -11,6 +11,7 @@
     "updateConfirmMessage": "Warning! Read the documentation about breaking changes (https://auth0.com/docs/extensions/authorization-extension) before updating the extension",
     "uninstallConfirmMessage": "You are about to uninstall the \"Authorization Extension\". If you proceed all your data in this extension will be lost. Do you want to continue?",
     "repository": "https://github.com/auth0/auth0-authorization-extension",
+    "docsUrl": "https://auth0.com/docs/extensions/authorization-extension",
     "keywords": [
       "auth0",
       "extension"
@@ -2742,6 +2743,7 @@
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-sso-dashboard/assets/logo.svg",
     "initialUrlPath": "/admins/login",
     "repository": "https://github.com/auth0-extensions/auth0-sso-dashboard-extension",
+    "docsUrl": "https://auth0.com/docs/extensions/sso-dashboard",
     "keywords": [
       "auth0",
       "extension"
