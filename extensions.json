@@ -2089,7 +2089,7 @@
       },
       "BATCH_SIZE": {
         "description": "The amount of logs to be read on each execution. Maximum is 100.",
-        "default": 100
+        "default": 20
       },
       "LOG_LEVEL": {
         "description": "This allows you to specify the log level of events that need to be sent",
