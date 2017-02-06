@@ -2088,7 +2088,7 @@
         "type": "password"
       },
       "BATCH_SIZE": {
-        "description": "The amount of logs to be read on each execution. Maximum is 100.",
+        "description": "The amount of logs to be read on each execution. Maximum is 20.",
         "default": 20
       },
       "LOG_LEVEL": {
