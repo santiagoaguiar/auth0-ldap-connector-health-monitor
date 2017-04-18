@@ -21,9 +21,8 @@ module.exports = function (grunt) {
         region:          process.env.S3_REGION,
         uploadConcurrency: 5,
         params: {
-          CacheControl: 'public, max-age=300'
+          CacheControl: 'max-age=300'
         },
-        // debug: true <<< use this option to test changes
       },
       clean: {
         files: [
@@ -46,6 +45,7 @@ module.exports = function (grunt) {
           { action: 'delete', dest: DEV_PATH }
         ]
       },
+
       publish_dev: {
         files: [
           {
@@ -131,7 +131,15 @@ module.exports = function (grunt) {
       });
   });
 
-  grunt.registerTask('cdn',       ['copy:release', 'aws_s3:clean', 'aws_s3:publish', 'http:purge_json', 'purge-extensions', 'purge-extensions-logos']);
+  grunt.registerTask('cdn', [
+    'copy:release',
+    'aws_s3:clean',
+    'aws_s3:publish'
+  ]);
 
-  grunt.registerTask('cdn-dev',   ['copy:release', 'aws_s3:clean_dev', 'aws_s3:publish_dev', 'http:purge_json_dev', 'purge-extensions', 'purge-extensions-logos']);
+  grunt.registerTask('cdn-dev', [
+    'copy:release',
+    'aws_s3:clean_dev',
+    'aws_s3:publish_dev'
+  ]);
 };
