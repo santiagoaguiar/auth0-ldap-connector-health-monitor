@@ -290,45 +290,6 @@
     }
   },
   {
-    "title": "Box Platform",
-    "name": "auth0-box-platform",
-    "version": "0.9.1",
-    "useHashName": false,
-    "author": "auth0",
-    "description": "The Box Platform Extension allows you to integrate Auth0 with your Box App Users using the Box Platform (https://developer.box.com/)",
-    "type": "application",
-    "docsUrl": "https://developer.box.com/",
-    "logoUrl": "https://cdn.auth0.com/extensions/auth0-box-platform/assets/box.svg",
-    "initialUrlPath": "/admins/login",
-    "uninstallConfirmMessage": "Do you really want to uninstall this extension? Doing so will also remove the rule and the token endpoint.",
-    "repository": "https://github.com/auth0-extensions/auth0-box-platform-extension",
-    "keywords": [
-      "auth0",
-      "extension",
-      "box"
-    ],
-    "auth0": {
-      "createClient": true,
-      "onInstallPath": "/.extensions/on-install",
-      "onUninstallPath": "/.extensions/on-uninstall",
-      "scopes": "read:resource_servers delete:resource_servers create:resource_servers read:clients delete:clients read:rules create:rules update:rules delete:rules"
-    },
-    "secrets": {
-      "BOX_SETTINGS_FILE": {
-        "required": true,
-        "type": "file",
-        "description": "The appSettings file for your Box Platform Client which you can download from the Developer Console.",
-        "allowedFileTypes": ".json",
-        "base64Encoded": false
-      },
-      "CORS_WHITELIST": {
-        "description": "Specify the origins which are allowed to call the extension from the browser",
-        "example": "http://localhost:7001,http://localhost:7002",
-        "required": false
-      }
-    }
-  },
-  {
     "title": "Auth0 Management API Webhooks",
     "name": "auth0-webhooks",
     "version": "1.4.2",
