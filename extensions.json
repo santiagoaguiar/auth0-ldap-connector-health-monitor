@@ -1264,9 +1264,9 @@
     },
     "schedule": "0 */5 * * * *",
     "secrets": {
-      "BATCH_SIZE": {
-        "description": "The amount of logs to be read on each execution. Maximum is 100.",
-        "default": 100
+      "MAX_BATCH_SIZE": {
+        "description": "The amount of logs to be read on each execution. Maximum is 3000.",
+        "default": 500
       },
       "SUMOLOGIC_URL": {
         "description": "Sumo Logic URL - this is your Sumo Logic HTTP Collector Endpoint",
