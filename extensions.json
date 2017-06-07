@@ -1247,7 +1247,7 @@
   {
     "title": "Auth0 Logs to Sumo Logic",
     "name": "auth0-logs-to-sumologic",
-    "version": "1.3.3",
+    "version": "1.3.4",
     "author": "auth0",
     "description": "This extension will take all of your Auth0 logs and export them to Sumo Logic",
     "type": "cron",
@@ -1522,7 +1522,15 @@
           {
             "value": "gd_recovery_rate_limit_exceed",
             "text": "When recovery validation fails because rate limit is exceeded"
-          }
+          },
+          {
+            "value": "ssa",
+            "text": "Success Silent Auth (Info)"
+          },
+          {
+            "value": "fsa",
+            "text": "Failed Silent Auth (Error)"
+          }          
         ]
       }
     }
