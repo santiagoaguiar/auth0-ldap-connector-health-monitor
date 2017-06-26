@@ -1272,7 +1272,7 @@
         "required": true
       },
       "BATCH_SIZE": {
-        "description": "The amount of logs to batch before sending to Sumologic. A single cron execution will send multiple batches.",
+        "description": "The amount of logs to batch before sending to Sumo Logic. A single cron execution will send multiple batches.",
         "default": 100
       },
       "START_FROM": {
