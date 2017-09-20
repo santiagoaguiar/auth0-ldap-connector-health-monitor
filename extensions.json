@@ -11,7 +11,10 @@
     "updateConfirmMessage": "Warning! Read the documentation about breaking changes (https://auth0.com/docs/extensions/authorization-extension) before updating the extension",
     "uninstallConfirmMessage": "You are about to uninstall the \"Authorization Extension\". If you proceed all your data in this extension will be lost. Do you want to continue?",
     "repository": "https://github.com/auth0/auth0-authorization-extension",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "auth0": {
       "createClient": true,
       "onUninstallPath": "/.extensions/on-uninstall",
@@ -82,7 +85,11 @@
     "logoUrl": "https://cdn.auth0.com/extensions/custom-social-connections/assets/logo.svg",
     "repository": "https://github.com/auth0/custom-social-connections",
     "docsUrl": "https://auth0.com/docs/extensions/custom-social-extensions",
-    "keywords": ["auth0", "extension", "social"]
+    "keywords": [
+      "auth0",
+      "extension",
+      "social"
+    ]
   },
   {
     "title": "Auth0 Authentication API Debugger",
@@ -95,7 +102,10 @@
     "docsUrl": "https://auth0.com/docs/extensions/authentication-api-debugger",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-authentication-api-debugger/assets/logo.svg",
     "repository": "https://github.com/auth0-extensions/auth0-authentication-api-debugger-extension",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "auth0": {
       "scopes": "read:clients read:client_keys"
     }
@@ -113,7 +123,11 @@
     "initialUrlPath": "/admins/login",
     "uninstallConfirmMessage": "Do you really want to uninstall this extension? Doing so will stop any Hosted Pages, Rules and Database Connection scripts from being deployed from Bitbucket to Auth0",
     "repository": "https://github.com/auth0-extensions/auth0-bitbucket-deploy",
-    "keywords": ["auth0", "extension", "bitbucket"],
+    "keywords": [
+      "auth0",
+      "extension",
+      "bitbucket"
+    ],
     "auth0": {
       "createClient": true,
       "onUninstallPath": "/.extensions/on-uninstall",
@@ -159,7 +173,11 @@
     "initialUrlPath": "/login",
     "uninstallConfirmMessage": "Do you really want to uninstall this extension? Doing so will stop any Pages, Rules and Database Connection scripts from being deployed from GitHub to Auth0",
     "repository": "https://github.com/auth0-extensions/auth0-github-deploy",
-    "keywords": ["auth0", "extension", "github"],
+    "keywords": [
+      "auth0",
+      "extension",
+      "github"
+    ],
     "auth0": {
       "createClient": true,
       "onUninstallPath": "/.extensions/on-uninstall",
@@ -201,7 +219,11 @@
     "initialUrlPath": "/login",
     "uninstallConfirmMessage": "Do you really want to uninstall this extension? Doing so will stop any Hosted Pages,  Rules and Database Connection scripts from being deployed from GitLab to Auth0",
     "repository": "https://github.com/auth0-extensions/auth0-gitlab-deploy",
-    "keywords": ["auth0", "extension", "gitlab"],
+    "keywords": [
+      "auth0",
+      "extension",
+      "gitlab"
+    ],
     "auth0": {
       "createClient": true,
       "onUninstallPath": "/.extensions/on-uninstall",
@@ -243,7 +265,11 @@
     "initialUrlPath": "/login",
     "uninstallConfirmMessage": "Do you really want to uninstall this extension? Doing so will stop any Hosted Pages, Rules and Database Connection scripts from being deployed from Visual Studio Team Services to Auth0",
     "repository": "https://github.com/auth0-extensions/auth0-visualstudio-deploy",
-    "keywords": ["auth0", "extension", "visualstudio"],
+    "keywords": [
+      "auth0",
+      "extension",
+      "visualstudio"
+    ],
     "auth0": {
       "createClient": true,
       "onUninstallPath": "/.extensions/on-uninstall",
@@ -324,7 +350,10 @@
     "repository": "https://github.com/auth0/auth0-ldap-conector-health-monitor",
     "docsUrl": "https://auth0.com/docs/extensions/adldap-connector",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-ldap-conector-health-monitor/assets/logo.svg",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "secrets": {
       "AUTH0_DOMAIN": {
         "description": "Auth0 domain"
@@ -348,7 +377,10 @@
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-webhooks/assets/logo.svg",
     "repository": "https://github.com/auth0/auth0-management-api-webhooks",
     "docsUrl": "https://auth0.com/docs/extensions/management-api-webhooks",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "schedule": "*/5 * * * *",
     "auth0": {
       "scopes": "read:logs"
@@ -382,7 +414,10 @@
     "repository": "https://github.com/auth0/auth0-authentication-api-webhooks",
     "docsUrl": "https://auth0.com/docs/extensions/authentication-api-webhooks",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-authentication-api-webhooks/assets/logo.svg",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "schedule": "*/5 * * * *",
     "auth0": {
       "scopes": "read:logs"
@@ -608,7 +643,10 @@
     "initialUrlPath": "/login",
     "repository": "https://github.com/auth0/auth0-user-import-export-extension",
     "docsUrl": "https://auth0.com/docs/extensions/user-import-export",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "auth0": {
       "scopes": "create:users read:users read:connections"
     }
@@ -626,7 +664,10 @@
     "initialUrlPath": "/",
     "docsUrl": "https://auth0.com/docs/extensions/delegated-admin",
     "repository": "https://github.com/auth0-extensions/auth0-delegated-administration-extension",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "auth0": {
       "createClient": true,
       "onUninstallPath": "/.extensions/on-uninstall",
@@ -677,7 +718,10 @@
     "initialUrlPath": "/admins/login",
     "repository": "https://github.com/auth0-extensions/auth0-sso-dashboard-extension",
     "docsUrl": "https://auth0.com/docs/extensions/sso-dashboard",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "auth0": {
       "createClient": true,
       "onUninstallPath": "/.extensions/on-uninstall",
@@ -711,7 +755,13 @@
     "repository": "https://github.com/auth0/auth0-extension-realtime-logs",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-extension-realtime-logs/assets/logo.svg",
     "docsUrl": "https://auth0.com/docs/extensions/realtime-webtask-logs",
-    "keywords": ["auth0", "extension", "webtask", "logs", "real-time"]
+    "keywords": [
+      "auth0",
+      "extension",
+      "webtask",
+      "logs",
+      "real-time"
+    ]
   },
   {
     "title": "Auth0 Logs to Application Insights",
@@ -725,7 +775,10 @@
     "repository": "https://github.com/auth0/auth0-logs-to-application-insights",
     "docsUrl": "https://auth0.com/docs/extensions/application-insight",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-application-insights/assets/logo.svg",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "schedule": "0 */5 * * * *",
     "auth0": {
       "createClient": true,
@@ -1006,7 +1059,10 @@
     "category": "log_export",
     "repository": "https://github.com/auth0-extensions/auth0-logs-to-azure-blob-storage",
     "docsUrl": "https://auth0.com/docs/extensions/azure-blob-storage",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-azure-blob-storage/assets/logo.svg",
     "schedule": "0 */5 * * * *",
     "auth0": {
@@ -1296,7 +1352,10 @@
     "repository": "https://github.com/auth0/auth0-logs-to-logentries",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-logentries/assets/logo.svg",
     "docsUrl": "https://auth0.com/docs/extensions/logentries",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "schedule": "0 */5 * * * *",
     "auth0": {
       "scopes": "read:logs"
@@ -1574,7 +1633,10 @@
     "repository": "https://github.com/auth0-extensions/auth0-logs-to-loggly",
     "docsUrl": "https://auth0.com/docs/extensions/loggly",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-loggly/assets/logo.svg",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "schedule": "0 */5 * * * *",
     "auth0": {
       "createClient": true,
@@ -1860,7 +1922,10 @@
     "repository": "https://github.com/auth0-extensions/auth0-logs-to-logstash",
     "docsUrl": "https://auth0.com/docs/extensions/logstash",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-logstash/assets/logo.png",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "schedule": "0 */5 * * * *",
     "auth0": {
       "createClient": true,
@@ -2156,7 +2221,10 @@
     "repository": "https://github.com/auth0/auth0-logs-to-mixpanel",
     "docsUrl": "https://auth0.com/docs/extensions/mixpanel",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-mixpanel/assets/logo.png",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "schedule": "0 */5 * * * *",
     "auth0": {
       "scopes": "read:logs"
@@ -2439,7 +2507,10 @@
     "repository": "https://github.com/auth0-extensions/auth0-logs-to-papertrail",
     "docsUrl": "https://auth0.com/docs/extensions/papertrail",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-papertrail/assets/logo.png",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "schedule": "0 */5 * * * *",
     "auth0": {
       "createClient": true,
@@ -2728,7 +2799,10 @@
     "repository": "https://github.com/auth0-extensions/auth0-logs-to-splunk",
     "docsUrl": "https://auth0.com/docs/extensions/splunk",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-splunk/assets/logo.png",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "schedule": "0 */5 * * * *",
     "auth0": {
       "createClient": true,
@@ -3025,7 +3099,10 @@
     "repository": "https://github.com/auth0/auth0-logs-to-sumologic",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-sumologic/assets/logo.png",
     "docsUrl": "https://auth0.com/docs/extensions/sumologic",
-    "keywords": ["auth0", "extension"],
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
     "schedule": "0 */5 * * * *",
     "auth0": {
       "createClient": true,
@@ -3293,6 +3370,37 @@
           }
         ]
       }
+    }
+  },
+  {
+    "title": "Auth0 Account Link",
+    "name": "auth0-account-link",
+    "version": "1.0.2",
+    "author": "auth0",
+    "description": "This extension gives Auth0 customers the ability to allow their users to link their accounts",
+    "type": "application",
+    "logoUrl": "https://cdn.auth0.com/extensions/auth0-authz/assets/logo.svg",
+    "docsUrl": "https://auth0.com/docs/extensions/account-link",
+    "codeUrl": "https://github.com/auth0-extensions/auth0-account-link-extension",
+    "initialUrlPath": "/",
+    "repository": "https://github.com/auth0-extensions/auth0-account-link-extension",
+    "keywords": [
+      "auth0",
+      "extension",
+      "account-link"
+    ],
+    "secrets": {
+      "CUSTOM_CSS": {
+        "description": "Add custom styles to the linking page of the extension.",
+        "required": false,
+        "example": "https://my.cdn.com/my-css.css"
+      }
+    },
+    "auth0": {
+      "createClient": true,
+      "onUninstallPath": "/.extensions/on-uninstall",
+      "onInstallPath": "/.extensions/on-install",
+      "scopes": "read:connections read:users read:rules create:rules update:rules delete:rules delete:clients"
     }
   }
 ]
