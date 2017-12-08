@@ -3286,6 +3286,12 @@
     ],
     "auth0": {
       "scopes": "create:users read:users read:connections create:passwords_checking_job"
+    },
+    "metadata" : {
+      "override-version": "1.7.0",
+      "override-auth0": {
+        "scopes": "create:users read:users read:connections"
+      }
     }
   },
   {
