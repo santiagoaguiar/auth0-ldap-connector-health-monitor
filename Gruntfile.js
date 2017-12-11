@@ -138,31 +138,37 @@ module.exports = function (grunt) {
       });
   });
 
-  grunt.registerTask('build-extensions', function(env) {
-    var isAppliance   = env === 'appliance';
-    var extensions    = grunt.file.readJSON('extensions.json');
-    var fileName = 'extensions';
+  grunt.registerTask('build-extensions', function(environmentName) {
+    var extensions = grunt.file.readJSON('extensions.json');
+    var fileName   = !!environmentName ? `extensions-${environmentName}.json` : 'extensions.json';
 
-    var extensions = extensions.filter(function(ext) {
-      if (isAppliance) {
-        var metadata = ext.metadata || [];
-        fileName = 'extensions-appliance';
+    var extensions = extensions.reduce(function(exts, ext) {
+      var environments = ext.environments || [];
+      var environment  = environments.find(function(env) {
+        return env.name === environmentName;
+      }) || {};
 
-        Object.getOwnPropertyNames(metadata).forEach(function(propertyName) {
-          if (propertyName.startsWith('override-')) {
-            var origPropertyName = propertyName.replace(/^override-/, '');
-            var overridenPropertyName = propertyName;
+      // Handle environment specific extension filtering
+      if (environment.filter === true) {
+        return exts;
+      }
 
-            ext[origPropertyName] = metadata[overridenPropertyName];
-          }
+      // Handle environment specific property overrides.
+      if (environment.overrides) {
+        var overridePropertyNames = Object.getOwnPropertyNames(environment.overrides)
+        overridePropertyNames.forEach(function(propertyName) {
+          ext[propertyName] = environment.overrides[propertyName];
         });
       }
 
-      delete ext.metadata;
-      return ext;
-    });
+      // Cleaning up environments property from generated extension files.
+      delete ext.environments;
 
-    grunt.file.write(`./release/${fileName}.json`, JSON.stringify(extensions, null, 2));
+      exts.push(ext);
+      return exts;
+    }, []);
+
+    grunt.file.write(`./release/${fileName}`, JSON.stringify(extensions, null, 2));
   });
 
   grunt.registerTask('cdn', [
