@@ -171,16 +171,17 @@ module.exports = function (grunt) {
     grunt.file.write(`./release/${fileName}`, JSON.stringify(extensions, null, 2));
   });
 
-  grunt.registerTask('cdn', [
+  grunt.registerTask('build', [
     'build-extensions',
     'build-extensions:appliance',
+  ]);
+
+  grunt.registerTask('deploy', [
     'aws_s3:clean',
     'aws_s3:publish'
   ]);
 
-  grunt.registerTask('cdn-dev', [
-    'build-extensions',
-    'build-appliance-extensions',
+  grunt.registerTask('deploy-dev', [
     'aws_s3:clean_dev',
     'aws_s3:publish_dev'
   ]);

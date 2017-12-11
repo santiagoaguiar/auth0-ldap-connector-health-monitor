@@ -4,8 +4,9 @@
   "private": true,
   "description": "List of available extensions",
   "scripts": {
-    "cdn": "grunt cdn",
-    "cdn-dev": "grunt cdn-dev",
+    "build": "grunt build",
+    "deploy": "grunt deploy",
+    "deploy-dev": "grunt deploy-dev",
     "validate": "mocha validator.js"
   },
   "repository": {
