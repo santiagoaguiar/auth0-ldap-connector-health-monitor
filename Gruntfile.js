@@ -4,15 +4,11 @@ module.exports = function (grunt) {
   var DEV_PATH  = 'extensions/develop/extensions.json';
   var BASE_PATH = 'extensions/extensions.json';
 
+  var DEV_APPLIANCE_PATH  = 'extensions/develop/extensions-appliance.json';
+  var BASE_APPLIANCE_PATH = 'extensions/extensions-appliance.json';
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    copy: {
-      release: {
-        files: [
-          { expand: true, flatten: true, src: 'extensions.json', dest: 'release/' }
-        ]
-      }
-    },
     aws_s3: {
       options: {
         accessKeyId:     process.env.S3_KEY,
@@ -27,6 +23,7 @@ module.exports = function (grunt) {
       clean: {
         files: [
           { action: 'delete', dest: BASE_PATH },
+          { action: 'delete', dest: BASE_APPLIANCE_PATH }
         ]
       },
       publish: {
@@ -42,7 +39,8 @@ module.exports = function (grunt) {
 
       clean_dev: {
         files: [
-          { action: 'delete', dest: DEV_PATH }
+          { action: 'delete', dest: DEV_PATH },
+          { action: 'delete', dest: DEV_APPLIANCE_PATH }
         ]
       },
 
@@ -69,11 +67,22 @@ module.exports = function (grunt) {
           url: process.env.CDN_ROOT + '/' + DEV_PATH,
           method: 'DELETE'
         }
+      },
+      purge_json: {
+        options: {
+          url: process.env.CDN_ROOT + '/' + BASE_APPLIANCE_PATH,
+          method: 'DELETE'
+        }
+      },
+      purge_json_dev: {
+        options: {
+          url: process.env.CDN_ROOT + '/' + DEV_APPLIANCE_PATH,
+          method: 'DELETE'
+        }
       }
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-aws-s3');
   grunt.loadNpmTasks('grunt-http');
 
@@ -89,7 +98,6 @@ module.exports = function (grunt) {
       var url     = cdn + '/extensions/' + name + '/assets/logo.svg';
 
       grunt.log.ok(url);
-
       promises.push(request.del(url).promise());
     });
 
@@ -116,7 +124,6 @@ module.exports = function (grunt) {
       var url     = cdn + '/extensions/' + name + '/' + name + '-' + version + '.js';
 
       grunt.log.ok(url);
-
       promises.push(request.del(url).promise());
     });
 
@@ -131,14 +138,49 @@ module.exports = function (grunt) {
       });
   });
 
+  grunt.registerTask('build-extensions', function(environmentName) {
+    var extensions = grunt.file.readJSON('extensions.json');
+    var fileName   = !!environmentName ? `extensions-${environmentName}.json` : 'extensions.json';
+
+    var extensions = extensions.reduce(function(exts, ext) {
+      var environments = ext.environments || [];
+      var environment  = environments.find(function(env) {
+        return env.name === environmentName;
+      }) || {};
+
+      // Handle environment specific extension filtering
+      if (environment.filter === true) {
+        return exts;
+      }
+
+      // Handle environment specific property overrides.
+      if (environment.overrides) {
+        var overridePropertyNames = Object.getOwnPropertyNames(environment.overrides)
+        overridePropertyNames.forEach(function(propertyName) {
+          ext[propertyName] = environment.overrides[propertyName];
+        });
+      }
+
+      // Cleaning up environments property from generated extension files.
+      delete ext.environments;
+
+      exts.push(ext);
+      return exts;
+    }, []);
+
+    grunt.file.write(`./release/${fileName}`, JSON.stringify(extensions, null, 2));
+  });
+
   grunt.registerTask('cdn', [
-    'copy:release',
+    'build-extensions',
+    'build-extensions:appliance',
     'aws_s3:clean',
     'aws_s3:publish'
   ]);
 
   grunt.registerTask('cdn-dev', [
-    'copy:release',
+    'build-extensions',
+    'build-appliance-extensions',
     'aws_s3:clean_dev',
     'aws_s3:publish_dev'
   ]);
