@@ -3287,15 +3287,17 @@
     "auth0": {
       "scopes": "create:users read:users read:connections create:passwords_checking_job"
     },
-    "environments" : [{
-      "name": "appliance",
-      "overrides": {
-        "version": "1.7.0",
-        "auth0": {
-          "scopes": "create:users read:users read:connections"
+    "environments": [
+      {
+        "name": "appliance",
+        "overrides": {
+          "version": "1.7.0",
+          "auth0": {
+            "scopes": "create:users read:users read:connections"
+          }
         }
       }
-    }]
+    ]
   },
   {
     "title": "GitLab Deployments",
@@ -3350,7 +3352,7 @@
   {
     "title": "Auth0 Authorization",
     "name": "auth0-authz",
-    "version": "2.4.7",
+    "version": "2.4.9",
     "author": "auth0",
     "description": "This extension gives Auth0 customers the possibility to manage group memberships for their users.",
     "type": "application",
