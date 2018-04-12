@@ -3373,7 +3373,7 @@
   {
     "title": "Delegated Administration Dashboard",
     "name": "auth0-delegated-admin",
-    "version": "2.6.1",
+    "version": "2.6.2",
     "author": "auth0",
     "useHashName": false,
     "description": "This extension allows non-dashboard administrators to manage (a subset of) users.",
@@ -3419,6 +3419,22 @@
           {
             "value": "true",
             "text": "Yes"
+          }
+        ]
+      },
+      "SEARCH_ENGINE": {
+        "description": "Engine for searching users",
+        "type": "select",
+        "allowMultiple": false,
+        "default": "v3",
+        "options": [
+          {
+            "value": "v2",
+            "text": "v2"
+          },
+          {
+            "value": "v3",
+            "text": "v3"
           }
         ]
       }
