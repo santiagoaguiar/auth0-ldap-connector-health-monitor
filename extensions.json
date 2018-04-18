@@ -2225,37 +2225,6 @@
     }
   },
   {
-    "title": "User Import / Export",
-    "name": "auth0-user-import-export",
-    "version": "2.2.0",
-    "author": "auth0",
-    "useHashName": false,
-    "description": "This extension allows you to import/export users from/to your account.",
-    "type": "application",
-    "logoUrl": "https://cdn.rawgit.com/auth0/auth0-user-import-export-extension/master/assets/logo.svg",
-    "initialUrlPath": "/login",
-    "docsUrl": "https://auth0.com/docs/extensions/user-import-export",
-    "repository": "https://github.com/auth0/auth0-user-import-export-extension",
-    "keywords": [
-      "auth0",
-      "extension"
-    ],
-    "auth0": {
-      "scopes": "create:users read:users read:connections create:passwords_checking_job"
-    },
-    "environments": [
-      {
-        "name": "appliance",
-        "overrides": {
-          "version": "1.7.0",
-          "auth0": {
-            "scopes": "create:users read:users read:connections"
-          }
-        }
-      }
-    ]
-  },
-  {
     "title": "GitLab Deployments",
     "name": "auth0-gitlab-deploy",
     "version": "2.3.1",
@@ -3482,5 +3451,25 @@
       "logs",
       "real-time"
     ]
+  },
+  {
+    "title": "User Import / Export",
+    "name": "auth0-user-import-export",
+    "version": "2.4.0",
+    "author": "auth0",
+    "useHashName": false,
+    "description": "This extension allows you to import/export users from/to your account.",
+    "type": "application",
+    "logoUrl": "https://cdn.rawgit.com/auth0/auth0-user-import-export-extension/master/assets/logo.svg",
+    "initialUrlPath": "/login",
+    "docsUrl": "https://auth0.com/docs/extensions/user-import-export",
+    "repository": "https://github.com/auth0/auth0-user-import-export-extension",
+    "keywords": [
+      "auth0",
+      "extension"
+    ],
+    "auth0": {
+      "scopes": "create:users read:users read:connections create:passwords_checking_job"
+    }
   }
 ]
