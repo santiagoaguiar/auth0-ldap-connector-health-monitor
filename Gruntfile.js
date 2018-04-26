@@ -155,8 +155,7 @@ module.exports = function (grunt) {
 
       // Handle environment specific property overrides.
       if (environment.overrides) {
-        var overridePropertyNames = Object.getOwnPropertyNames(environment.overrides)
-        overridePropertyNames.forEach(function(propertyName) {
+        Object.keys(environment.overrides).forEach(function(propertyName) {
           ext[propertyName] = environment.overrides[propertyName];
         });
       }
