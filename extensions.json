@@ -17,56 +17,6 @@
     ]
   },
   {
-    "title": "Bitbucket Deployments",
-    "name": "auth0-bitbucket-deploy",
-    "version": "2.2.0",
-    "author": "auth0",
-    "description": "This extension gives Auth0 customers the possibility to deploy Hosted Pages, Rules and Custom Database Connections from Bitbucket.",
-    "type": "application",
-    "category": "source_control",
-    "docsUrl": "https://auth0.com/docs/extensions/bitbucket-deploy",
-    "logoUrl": "https://cdn.auth0.com/extensions/auth0-bitbucket-deploy/assets/logo.svg",
-    "initialUrlPath": "/admins/login",
-    "uninstallConfirmMessage": "Do you really want to uninstall this extension? Doing so will stop any Hosted Pages, Rules and Database Connection scripts from being deployed from Bitbucket to Auth0",
-    "repository": "https://github.com/auth0-extensions/auth0-bitbucket-deploy",
-    "keywords": [
-      "auth0",
-      "extension",
-      "bitbucket"
-    ],
-    "auth0": {
-      "createClient": true,
-      "onUninstallPath": "/.extensions/on-uninstall",
-      "scopes": "read:tenant_settings update:tenant_settings update:clients read:clients read:connections update:connections read:rules create:rules update:rules delete:rules delete:clients"
-    },
-    "secrets": {
-      "BITBUCKET_REPOSITORY": {
-        "example": "myorganization/myrepo",
-        "description": "The repository from which you want to deploy rules and database scripts",
-        "required": true
-      },
-      "BITBUCKET_BRANCH": {
-        "description": "The branch we should monitor for commits",
-        "default": "master",
-        "required": true
-      },
-      "BITBUCKET_USER": {
-        "description": "Bitbucket account",
-        "required": true
-      },
-      "BITBUCKET_PASSWORD": {
-        "description": "Bitbucket password",
-        "type": "password",
-        "required": true
-      },
-      "SLACK_INCOMING_WEBHOOK_URL": {
-        "example": "https://hooks.slack.com/services/...",
-        "description": "Webhook URL for Slack used to notify you of successful and failed deployments",
-        "required": false
-      }
-    }
-  },
-  {
     "title": "Visual Studio Team Services Deployments",
     "name": "auth0-visualstudio-deploy",
     "version": "2.2.0",
@@ -2456,7 +2406,57 @@
           }
         ]
       }
-    }
+    },
+    "environments": [
+      {
+        "name": "appliance",
+        "overrides": {
+          "secrets": {
+            "EXTENSION_CLIENT_ID": {
+              "description": "Client ID of the application you created in the Auth0 Dashboard",
+              "required": true
+            },
+            "TITLE": {
+              "description": "Custom title for the dashboard",
+              "example": "Fabrikam User Management",
+              "required": false
+            },
+            "CUSTOM_CSS": {
+              "description": "A CSS file containing custom styles for the extension",
+              "example": "https://cdn.fabrikam.com/static/extensions/theme/fabrikam.css",
+              "required": false
+            },
+            "FEDERATED_LOGOUT": {
+              "description": "Also sign out from the IDP when users logout?",
+              "type": "select",
+              "allowMultiple": false,
+              "options": [
+                {
+                  "value": "false",
+                  "text": "No"
+                },
+                {
+                  "value": "true",
+                  "text": "Yes"
+                }
+              ]
+            },
+            "SEARCH_ENGINE": {
+              "description": "Engine for searching users",
+              "type": "select",
+              "allowMultiple": false,
+              "default": "v2",
+              "options": [
+                {
+                  "value": "v2",
+                  "text": "v2"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
   },
   {
     "title": "Auth0 Logs to Sumo Logic",
@@ -3470,6 +3470,17 @@
     ],
     "auth0": {
       "scopes": "create:users read:users read:connections create:passwords_checking_job"
-    }
+    },
+    "environments": [
+      {
+        "name": "appliance",
+        "overrides": {
+          "version": "1.7.0",
+          "auth0": {
+            "scopes": "create:users read:users read:connections"
+          }
+        }
+      }
+    ]
   }
 ]
