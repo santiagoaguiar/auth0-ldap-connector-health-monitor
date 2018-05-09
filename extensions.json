@@ -170,11 +170,12 @@
   {
     "title": "Auth0 Authentication API webhooks",
     "name": "auth0-authentication-api-webhooks",
-    "version": "1.5.0",
+    "version": "2.0.0",
     "author": "auth0",
     "description": "Allows you to define webhooks for Auth0's Authentication API. It will go through the audit logs and call a webhook for specific events.",
     "type": "cron",
-    "category": "webhook",
+    "initialUrlPath": "/login",
+    "category": "log_export",
     "repository": "https://github.com/auth0/auth0-authentication-api-webhooks",
     "docsUrl": "https://auth0.com/docs/extensions/authentication-api-webhooks",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-authentication-api-webhooks/assets/logo.svg",
@@ -182,9 +183,11 @@
       "auth0",
       "extension"
     ],
-    "schedule": "*/5 * * * *",
+    "schedule": "0 */5 * * * *",
     "auth0": {
-      "scopes": "read:logs"
+      "createClient": true,
+      "onUninstallPath": "/.extensions/on-uninstall",
+      "scopes": "read:logs delete:clients"
     },
     "secrets": {
       "BATCH_SIZE": {
@@ -192,11 +195,50 @@
         "default": 100
       },
       "WEBHOOK_URL": {
-        "required": true
+        "required": true,
+        "type": "text"
+      },
+      "SEND_AS_BATCH": {
+        "description": "If enabled, extension will send entire batch in one request. Otherwise, it will send requests one by one.",
+        "type": "select",
+        "allowMultiple": false,
+        "default": "false",
+        "options": [
+          {
+            "value": "false",
+            "text": "Disabled"
+          },
+          {
+            "value": "true",
+            "text": "Enabled"
+          }
+        ]
       },
       "WEBHOOK_CONCURRENT_CALLS": {
         "description": "The maximum concurrent calls that will be made to your webhook",
         "default": 5
+      },
+      "START_FROM": {
+        "description": "Checkpoint ID of log to start from."
+      },
+      "SLACK_INCOMING_WEBHOOK_URL": {
+        "description": "Slack Incoming Webhook URL used to report statistics and possible failures"
+      },
+      "SLACK_SEND_SUCCESS": {
+        "description": "This setting will enable verbose notifications to Slack which are useful for troubleshooting",
+        "type": "select",
+        "allowMultiple": false,
+        "default": "false",
+        "options": [
+          {
+            "value": "false",
+            "text": "No"
+          },
+          {
+            "value": "true",
+            "text": "Yes"
+          }
+        ]
       },
       "LOG_LEVEL": {
         "description": "This allows you to specify the log level of events that need to be sent",
@@ -235,160 +277,372 @@
         "allowMultiple": true,
         "options": [
           {
-            "value": "-",
-            "text": "All events"
+            "text": "",
+            "value": "-"
           },
           {
-            "value": "s",
-            "text": "Success Login (Info)"
+            "text": "Success Login",
+            "value": "s"
           },
           {
-            "value": "seacft",
-            "text": "Success Exchange (Info)"
+            "text": "Success Silent Auth",
+            "value": "ssa"
           },
           {
-            "value": "feacft",
-            "text": "Failed Exchange (Error)"
+            "text": "Failed Silent Auth",
+            "value": "fsa"
           },
           {
-            "value": "f",
-            "text": "Failed Login (Error)"
+            "text": "Success Exchange",
+            "value": "seacft"
           },
           {
-            "value": "w",
-            "text": "Warnings During Login (Warning)"
+            "text": "Failed Exchange",
+            "value": "feacft"
           },
           {
-            "value": "du",
-            "text": "Deleted User (Info)"
+            "text": "Success Exchange",
+            "value": "seccft"
           },
           {
-            "value": "fu",
-            "text": "Failed Login (invalid email/username) (Error)"
+            "text": "Failed Exchange",
+            "value": "feccft"
           },
           {
-            "value": "fp",
-            "text": "Failed Login (wrong password) (Error)"
+            "text": "Success Exchange",
+            "value": "sepft"
           },
           {
-            "value": "fc",
-            "text": "Failed by Connector (Error)"
+            "text": "Failed Exchange",
+            "value": "fepft"
           },
           {
-            "value": "fco",
-            "text": "Failed by CORS (Error)"
+            "text": "Success Exchange",
+            "value": "sertft"
           },
           {
-            "value": "con",
-            "text": "Connector Online (Info)"
+            "text": "Failed Exchange",
+            "value": "fertft"
           },
           {
-            "value": "coff",
-            "text": "Connector Offline (Error)"
+            "text": "Success Exchange",
+            "value": "seoobft"
           },
           {
-            "value": "fcpro",
-            "text": "Failed Connector Provisioning (Critical)"
+            "text": "Failed Exchange",
+            "value": "feoobft"
           },
           {
-            "value": "ss",
-            "text": "Success Signup (Info)"
+            "text": "Success Exchange",
+            "value": "seotpft"
           },
           {
-            "value": "fs",
-            "text": "Failed Signup (Error)"
+            "text": "Failed Exchange",
+            "value": "feotpft"
           },
           {
-            "value": "cs",
-            "text": "Code Sent (Debug)"
+            "text": "Success Exchange",
+            "value": "sercft"
           },
           {
-            "value": "cls",
-            "text": "Code/Link Sent (Debug)"
+            "text": "Failed Exchange",
+            "value": "fercft"
           },
           {
-            "value": "sv",
-            "text": "Success Verification Email (Debug)"
+            "text": "Failed Login",
+            "value": "f"
           },
           {
-            "value": "fv",
-            "text": "Failed Verification Email (Debug)"
+            "text": "Warning",
+            "value": "w"
           },
           {
-            "value": "scp",
-            "text": "Success Change Password (Info)"
+            "text": "Deprecation Notice",
+            "value": "depnote"
           },
           {
-            "value": "fcp",
-            "text": "Failed Change Password (Error)"
+            "text": "Deleted User",
+            "value": "du"
           },
           {
-            "value": "sce",
-            "text": "Success Change Email (Info)"
+            "text": "Failed Login (invalid email/username)",
+            "value": "fu"
           },
           {
-            "value": "fce",
-            "text": "Failed Change Email (Error)"
+            "text": "Failed Login (wrong password)",
+            "value": "fp"
           },
           {
-            "value": "scu",
-            "text": "Success Change Username (Info)"
+            "text": "Failed by Connector",
+            "value": "fc"
           },
           {
-            "value": "fcu",
-            "text": "Failed Change Username (Error)"
+            "text": "Failed by CORS",
+            "value": "fco"
           },
           {
-            "value": "scpn",
-            "text": "Success Change Phone Number (Info)"
+            "text": "Connector Online",
+            "value": "con"
           },
           {
-            "value": "fcpn",
-            "text": "Failed Change Phone Number (Error)"
+            "text": "Connector Offline",
+            "value": "coff"
           },
           {
-            "value": "svr",
-            "text": "Success Verification Email Request (Debug)"
+            "text": "Failed Connector Provisioning",
+            "value": "fcpro"
           },
           {
-            "value": "fvr",
-            "text": "Failed Verification Email Request (Error)"
+            "text": "Success Signup",
+            "value": "ss"
           },
           {
-            "value": "scpr",
-            "text": "Success Change Password Request (Debug)"
+            "text": "Failed Signup",
+            "value": "fs"
           },
           {
-            "value": "fcpr",
-            "text": "Failed Change Password Request (Error)"
+            "text": "Code Sent",
+            "value": "cs"
           },
           {
-            "value": "fn",
-            "text": "Failed Sending Notification (Error)"
+            "text": "Code/Link Sent",
+            "value": "cls"
           },
           {
-            "value": "limit_wc",
-            "text": "Blocked Account (Critical)"
+            "text": "Success Verification Email",
+            "value": "sv"
           },
           {
-            "value": "limit_ui",
-            "text": "Too Many Calls to /userinfo (Critical)"
+            "text": "Failed Verification Email",
+            "value": "fv"
           },
           {
-            "value": "api_limit",
-            "text": "Rate Limit On API (Critical)"
+            "text": "Success Change Password",
+            "value": "scp"
           },
           {
-            "value": "sdu",
-            "text": "Successful User Deletion (Info)"
+            "text": "Failed Change Password",
+            "value": "fcp"
           },
           {
-            "value": "fdu",
-            "text": "Failed User Deletion (Error)"
+            "text": "Success Post Change Password Hook",
+            "value": "scph"
           },
           {
-            "value": "pwd_leak",
-            "text": "Leaked credentials detected (Critical)"
+            "text": "Failed Post Change Password Hook",
+            "value": "fcph"
+          },
+          {
+            "text": "Success Change Email",
+            "value": "sce"
+          },
+          {
+            "text": "Failed Change Email",
+            "value": "fce"
+          },
+          {
+            "text": "Success Change Username",
+            "value": "scu"
+          },
+          {
+            "text": "Failed Change Username",
+            "value": "fcu"
+          },
+          {
+            "text": "Success Change Phone Number",
+            "value": "scpn"
+          },
+          {
+            "text": "Failed Change Phone Number",
+            "value": "fcpn"
+          },
+          {
+            "text": "Success Verification Email Request",
+            "value": "svr"
+          },
+          {
+            "text": "Failed Verification Email Request",
+            "value": "fvr"
+          },
+          {
+            "text": "Success Change Password Request",
+            "value": "scpr"
+          },
+          {
+            "text": "Failed Change Password Request",
+            "value": "fcpr"
+          },
+          {
+            "text": "Failed Sending Notification",
+            "value": "fn"
+          },
+          {
+            "text": "Blocked Account",
+            "value": "limit_wc"
+          },
+          {
+            "text": "Blocked IP Address",
+            "value": "limit_mu"
+          },
+          {
+            "text": "Too Many Calls to /userinfo",
+            "value": "limit_ui"
+          },
+          {
+            "text": "Rate Limit On API",
+            "value": "api_limit"
+          },
+          {
+            "text": "Too Many Calls to /delegation",
+            "value": "limit_delegation"
+          },
+          {
+            "text": "Successful User Deletion",
+            "value": "sdu"
+          },
+          {
+            "text": "Failed User Deletion",
+            "value": "fdu"
+          },
+          {
+            "text": "Auth0 Update Launched",
+            "value": "admin_update_launch"
+          },
+          {
+            "text": "Auth0 OS Update Started",
+            "value": "sys_os_update_start"
+          },
+          {
+            "text": "Auth0 OS Update Ended",
+            "value": "sys_os_update_end"
+          },
+          {
+            "text": "Auth0 Update Started",
+            "value": "sys_update_start"
+          },
+          {
+            "text": "Auth0 Update Ended",
+            "value": "sys_update_end"
+          },
+          {
+            "text": "Success Logout",
+            "value": "slo"
+          },
+          {
+            "text": "Failed Logout",
+            "value": "flo"
+          },
+          {
+            "text": "Success Delegation",
+            "value": "sd"
+          },
+          {
+            "text": "Failed Delegation",
+            "value": "fd"
+          },
+          {
+            "text": "Unenroll device account",
+            "value": "gd_unenroll"
+          },
+          {
+            "text": "Update device account",
+            "value": "gd_update_device_account"
+          },
+          {
+            "text": "Module switch",
+            "value": "gd_module_switch"
+          },
+          {
+            "text": "Guardian tenant update",
+            "value": "gd_tenant_update"
+          },
+          {
+            "text": "Second factor started",
+            "value": "gd_start_auth"
+          },
+          {
+            "text": "Enroll started",
+            "value": "gd_start_enroll"
+          },
+          {
+            "text": "MFA Enrollment start failed",
+            "value": "gd_start_enroll_failed"
+          },
+          {
+            "text": "User delete",
+            "value": "gd_user_delete"
+          },
+          {
+            "text": "OTP Auth suceed",
+            "value": "gd_auth_succeed"
+          },
+          {
+            "text": "OTP Auth failed",
+            "value": "gd_auth_failed"
+          },
+          {
+            "text": "Push notification sent",
+            "value": "gd_send_pn"
+          },
+          {
+            "text": "Error sending MFA Push Notification",
+            "value": "gd_send_pn_failure"
+          },
+          {
+            "text": "OTP Auth rejected",
+            "value": "gd_auth_rejected"
+          },
+          {
+            "text": "Recovery succeed",
+            "value": "gd_recovery_succeed"
+          },
+          {
+            "text": "Recovery failed",
+            "value": "gd_recovery_failed"
+          },
+          {
+            "text": "SMS Sent",
+            "value": "gd_send_sms"
+          },
+          {
+            "text": "Error sending MFA SMS",
+            "value": "gd_send_sms_failure"
+          },
+          {
+            "text": "Too many failures",
+            "value": "gd_otp_rate_limit_exceed"
+          },
+          {
+            "text": "Too many failures",
+            "value": "gd_recovery_rate_limit_exceed"
+          },
+          {
+            "text": "Guardian enrollment complete",
+            "value": "gd_enrollment_complete"
+          },
+          {
+            "text": "Users import",
+            "value": "fui"
+          },
+          {
+            "text": "Users import",
+            "value": "sui"
+          },
+          {
+            "text": "Breached password",
+            "value": "pwd_leak"
+          },
+          {
+            "text": "Failed cross origin authentication",
+            "value": "fcoa"
+          },
+          {
+            "text": "Success cross origin authentication",
+            "value": "scoa"
+          },
+          {
+            "text": "Account unblocked",
+            "value": "ublkdu"
           }
         ]
       }
