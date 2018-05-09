@@ -133,21 +133,24 @@
   {
     "title": "Auth0 Management API Webhooks",
     "name": "auth0-webhooks",
-    "version": "1.4.2",
+    "version": "2.0.0",
     "author": "auth0",
     "description": "Allows you to define webhooks for Auth0's Management API. It will go through the audit logs and call a webhook for specific events.",
     "type": "cron",
+    "initialUrlPath": "/login",
     "category": "webhook",
-    "logoUrl": "https://cdn.auth0.com/extensions/auth0-webhooks/assets/logo.svg",
     "repository": "https://github.com/auth0/auth0-management-api-webhooks",
     "docsUrl": "https://auth0.com/docs/extensions/management-api-webhooks",
+    "logoUrl": "https://cdn.auth0.com/extensions/auth0-webhooks/assets/logo.svg",
     "keywords": [
       "auth0",
       "extension"
     ],
-    "schedule": "*/5 * * * *",
+    "schedule": "0 */5 * * * *",
     "auth0": {
-      "scopes": "read:logs"
+      "createClient": true,
+      "onUninstallPath": "/.extensions/on-uninstall",
+      "scopes": "read:logs delete:clients"
     },
     "secrets": {
       "BATCH_SIZE": {
@@ -159,11 +162,50 @@
         "example": "e.g.: users, connections, rules, logs, emails, stats, clients, tenants"
       },
       "WEBHOOK_URL": {
-        "required": true
+        "required": true,
+        "type": "text"
+      },
+      "SEND_AS_BATCH": {
+        "description": "If enabled, extension will send entire batch in one request. Otherwise, it will send requests one by one.",
+        "type": "select",
+        "allowMultiple": false,
+        "default": "false",
+        "options": [
+          {
+            "value": "false",
+            "text": "Disabled"
+          },
+          {
+            "value": "true",
+            "text": "Enabled"
+          }
+        ]
       },
       "WEBHOOK_CONCURRENT_CALLS": {
         "description": "The maximum concurrent calls that will be made to your webhook",
         "default": 5
+      },
+      "START_FROM": {
+        "description": "Checkpoint ID of log to start from."
+      },
+      "SLACK_INCOMING_WEBHOOK_URL": {
+        "description": "Slack Incoming Webhook URL used to report statistics and possible failures"
+      },
+      "SLACK_SEND_SUCCESS": {
+        "description": "This setting will enable verbose notifications to Slack which are useful for troubleshooting",
+        "type": "select",
+        "allowMultiple": false,
+        "default": "false",
+        "options": [
+          {
+            "value": "false",
+            "text": "No"
+          },
+          {
+            "value": "true",
+            "text": "Yes"
+          }
+        ]
       }
     }
   },
@@ -175,7 +217,7 @@
     "description": "Allows you to define webhooks for Auth0's Authentication API. It will go through the audit logs and call a webhook for specific events.",
     "type": "cron",
     "initialUrlPath": "/login",
-    "category": "log_export",
+    "category": "webhook",
     "repository": "https://github.com/auth0/auth0-authentication-api-webhooks",
     "docsUrl": "https://auth0.com/docs/extensions/authentication-api-webhooks",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-authentication-api-webhooks/assets/logo.svg",
