@@ -20,7 +20,8 @@
   {
     "title": "Visual Studio Team Services Deployments",
     "name": "auth0-visualstudio-deploy",
-    "version": "2.2.0",
+    "version": "2.2.5",
+    "preVersion": "2.2.5",
     "author": "auth0",
     "description": "This extension gives Auth0 customers the possibility to deploy Hosted Pages, Rules and Custom Database Connections from Visual Studio Team Services.",
     "type": "application",
@@ -108,6 +109,7 @@
     "title": "Auth0 AD/LDAP Connector Health Monitor",
     "name": "auth0-ldap-conector-health-monitor",
     "version": "1.0.2",
+    "preVersion": "1.0.2",
     "author": "auth0",
     "description": "This extension will expose an endpoint you can use from your monitoring tool to monitor your AD/LDAP Connectors",
     "type": "application",
@@ -134,7 +136,8 @@
   {
     "title": "Auth0 Management API Webhooks",
     "name": "auth0-webhooks",
-    "version": "2.0.0",
+    "version": "2.1.0",
+    "preVersion": "2.0.0",
     "author": "auth0",
     "description": "Allows you to define webhooks for Auth0's Management API. It will go through the audit logs and call a webhook for specific events.",
     "type": "cron",
@@ -166,19 +169,24 @@
         "required": true,
         "type": "text"
       },
+      "AUTHORIZATION": {
+        "description": "Authorization Header (optional).",
+        "example": "Basic dm9yZGVsOnZvcmRlbA==",
+        "type": "text"
+      },
       "SEND_AS_BATCH": {
         "description": "If enabled, extension will send entire batch in one request. Otherwise, it will send requests one by one.",
         "type": "select",
         "allowMultiple": false,
-        "default": "false",
+        "default": "true",
         "options": [
-          {
-            "value": "false",
-            "text": "Disabled"
-          },
           {
             "value": "true",
             "text": "Enabled"
+          },
+          {
+            "value": "false",
+            "text": "Disabled"
           }
         ]
       },
@@ -213,7 +221,8 @@
   {
     "title": "Auth0 Authentication API webhooks",
     "name": "auth0-authentication-api-webhooks",
-    "version": "2.0.1",
+    "version": "2.1.3",
+    "preVersion": "2.1.0",
     "author": "auth0",
     "description": "Allows you to define webhooks for Auth0's Authentication API. It will go through the audit logs and call a webhook for specific events.",
     "type": "cron",
@@ -241,19 +250,24 @@
         "required": true,
         "type": "text"
       },
+      "AUTHORIZATION": {
+        "description": "Authorization Header (optional).",
+        "example": "Basic dm9yZGVsOnZvcmRlbA==",
+        "type": "text"
+      },
       "SEND_AS_BATCH": {
         "description": "If enabled, extension will send entire batch in one request. Otherwise, it will send requests one by one.",
         "type": "select",
         "allowMultiple": false,
-        "default": "false",
+        "default": "true",
         "options": [
-          {
-            "value": "false",
-            "text": "Disabled"
-          },
           {
             "value": "true",
             "text": "Enabled"
+          },
+          {
+            "value": "false",
+            "text": "Disabled"
           }
         ]
       },
@@ -695,6 +709,7 @@
     "title": "Auth0 Logs to Azure Blob Storage",
     "name": "auth0-logs-to-azure-blob-storage",
     "version": "2.0.0",
+    "preVersion": "2.0.0",
     "author": "auth0",
     "description": "This extension will take all of your Auth0 logs and export them to Azure Blob Storage",
     "type": "cron",
@@ -988,6 +1003,7 @@
     "title": "Auth0 Logs to Logentries",
     "name": "auth0-logs-to-logentries",
     "version": "2.0.0",
+    "preVersion": "2.0.0",
     "author": "auth0",
     "description": "This extension will take all of your Auth0 logs and export them to Logentries",
     "type": "cron",
@@ -1273,6 +1289,7 @@
     "title": "Auth0 Logs to Logstash",
     "name": "auth0-logs-to-logstash",
     "version": "2.0.1",
+    "preVersion": "2.0.1",
     "author": "auth0",
     "category": "log_export",
     "description": "This extension will continuously export your Auth0 logs to Logstash",
@@ -1572,11 +1589,13 @@
   {
     "title": "Auth0 Logs to Mixpanel",
     "name": "auth0-logs-to-mixpanel",
-    "version": "1.4.0",
+    "version": "2.0.1",
+    "preVersion": "1.4.0",
     "author": "auth0",
     "description": "This extension will take all of your Auth0 logs and export them to Mixpanel",
     "type": "cron",
     "category": "log_export",
+    "initialUrlPath": "/login",
     "repository": "https://github.com/auth0/auth0-logs-to-mixpanel",
     "docsUrl": "https://auth0.com/docs/extensions/mixpanel",
     "logoUrl": "https://cdn.auth0.com/extensions/auth0-logs-to-mixpanel/assets/logo.png",
@@ -1586,7 +1605,9 @@
     ],
     "schedule": "0 */5 * * * *",
     "auth0": {
-      "scopes": "read:logs"
+      "createClient": true,
+      "onUninstallPath": "/.extensions/on-uninstall",
+      "scopes": "read:logs delete:clients"
     },
     "secrets": {
       "MIXPANEL_TOKEN": {
@@ -1601,6 +1622,28 @@
       "BATCH_SIZE": {
         "description": "The amount of logs to be read on each execution. Maximum is 20.",
         "default": 20
+      },
+      "START_FROM": {
+        "description": "Checkpoint ID of log to start from."
+      },
+      "SLACK_INCOMING_WEBHOOK_URL": {
+        "description": "Slack Incoming Webhook URL used to report statistics and possible failures"
+      },
+      "SLACK_SEND_SUCCESS": {
+        "description": "This setting will enable verbose notifications to Slack which are useful for troubleshooting",
+        "type": "select",
+        "allowMultiple": false,
+        "default": "false",
+        "options": [
+          {
+            "value": "false",
+            "text": "No"
+          },
+          {
+            "value": "true",
+            "text": "Yes"
+          }
+        ]
       },
       "LOG_LEVEL": {
         "description": "This allows you to specify the log level of events that need to be sent",
@@ -1639,216 +1682,196 @@
         "allowMultiple": true,
         "options": [
           {
-            "value": "-",
-            "text": ""
+            "text": "",
+            "value": "-"
           },
           {
-            "value": "s",
-            "text": "Success Login (Info)"
+            "text": "Success Login",
+            "value": "s"
           },
           {
-            "value": "seacft",
-            "text": "Success Exchange (Info)"
+            "text": "Success Exchange",
+            "value": "seacft"
           },
           {
-            "value": "feacft",
-            "text": "Failed Exchange (Error)"
+            "text": "Success Exchange (Client Credentials)",
+            "value": "seccft"
           },
           {
-            "value": "f",
-            "text": "Failed Login (Error)"
+            "text": "Failed Exchange",
+            "value": "feacft"
           },
           {
-            "value": "w",
-            "text": "Warnings During Login (Warning)"
+            "text": "Failed Exchange (Client Credentials)",
+            "value": "feccft"
           },
           {
-            "value": "du",
-            "text": "Deleted User (Info)"
+            "text": "Failed Login",
+            "value": "f"
           },
           {
-            "value": "fu",
-            "text": "Failed Login (invalid email/username) (Error)"
+            "text": "Warnings During Login",
+            "value": "w"
           },
           {
-            "value": "fp",
-            "text": "Failed Login (wrong password) (Error)"
+            "text": "Deleted User",
+            "value": "du"
           },
           {
-            "value": "fc",
-            "text": "Failed by Connector (Error)"
+            "text": "Failed Login (invalid email/username)",
+            "value": "fu"
           },
           {
-            "value": "fco",
-            "text": "Failed by CORS (Error)"
+            "text": "Failed Login (wrong password)",
+            "value": "fp"
           },
           {
-            "value": "con",
-            "text": "Connector Online (Info)"
+            "text": "Failed by Connector",
+            "value": "fc"
           },
           {
-            "value": "coff",
-            "text": "Connector Offline (Error)"
+            "text": "Failed by CORS",
+            "value": "fco"
           },
           {
-            "value": "fcpro",
-            "text": "Failed Connector Provisioning (Critical)"
+            "text": "Connector Online",
+            "value": "con"
           },
           {
-            "value": "ss",
-            "text": "Success Signup (Info)"
+            "text": "Connector Offline",
+            "value": "coff"
           },
           {
-            "value": "fs",
-            "text": "Failed Signup (Error)"
+            "text": "Failed Connector Provisioning",
+            "value": "fcpro"
           },
           {
-            "value": "cs",
-            "text": "Code Sent (Debug)"
+            "text": "Success Signup",
+            "value": "ss"
           },
           {
-            "value": "cls",
-            "text": "Code/Link Sent (Debug)"
+            "text": "Failed Signup",
+            "value": "fs"
           },
           {
-            "value": "sv",
-            "text": "Success Verification Email (Debug)"
+            "text": "Code Sent",
+            "value": "cs"
           },
           {
-            "value": "fv",
-            "text": "Failed Verification Email (Debug)"
+            "text": "Code/Link Sent",
+            "value": "cls"
           },
           {
-            "value": "scp",
-            "text": "Success Change Password (Info)"
+            "text": "Success Verification Email",
+            "value": "sv"
           },
           {
-            "value": "fcp",
-            "text": "Failed Change Password (Error)"
+            "text": "Failed Verification Email",
+            "value": "fv"
           },
           {
-            "value": "sce",
-            "text": "Success Change Email (Info)"
+            "text": "Success Change Password",
+            "value": "scp"
           },
           {
-            "value": "fce",
-            "text": "Failed Change Email (Error)"
+            "text": "Failed Change Password",
+            "value": "fcp"
           },
           {
-            "value": "scu",
-            "text": "Success Change Username (Info)"
+            "text": "Success Change Email",
+            "value": "sce"
           },
           {
-            "value": "fcu",
-            "text": "Failed Change Username (Error)"
+            "text": "Failed Change Email",
+            "value": "fce"
           },
           {
-            "value": "scpn",
-            "text": "Success Change Phone Number (Info)"
+            "text": "Success Change Username",
+            "value": "scu"
           },
           {
-            "value": "fcpn",
-            "text": "Failed Change Phone Number (Error)"
+            "text": "Failed Change Username",
+            "value": "fcu"
           },
           {
-            "value": "svr",
-            "text": "Success Verification Email Request (Debug)"
+            "text": "Success Change Phone Number",
+            "value": "scpn"
           },
           {
-            "value": "fvr",
-            "text": "Failed Verification Email Request (Error)"
+            "text": "Failed Change Phone Number",
+            "value": "fcpn"
           },
           {
-            "value": "scpr",
-            "text": "Success Change Password Request (Debug)"
+            "text": "Success Verification Email Request",
+            "value": "svr"
           },
           {
-            "value": "fcpr",
-            "text": "Failed Change Password Request (Error)"
+            "text": "Failed Verification Email Request",
+            "value": "fvr"
           },
           {
-            "value": "fn",
-            "text": "Failed Sending Notification (Error)"
+            "text": "Success Change Password Request",
+            "value": "scpr"
           },
           {
-            "value": "limit_wc",
-            "text": "Blocked Account (Critical)"
+            "text": "Failed Change Password Request",
+            "value": "fcpr"
           },
           {
-            "value": "limit_ui",
-            "text": "Too Many Calls to /userinfo (Critical)"
+            "text": "Failed Sending Notification",
+            "value": "fn"
           },
           {
-            "value": "api_limit",
-            "text": "Rate Limit On API (Critical)"
+            "text": "API Operation",
+            "value": "sapi"
           },
           {
-            "value": "sdu",
-            "text": "Successful User Deletion (Info)"
+            "text": "Failed API Operation",
+            "value": "fapi"
           },
           {
-            "value": "fdu",
-            "text": "Failed User Deletion (Error)"
+            "text": "Blocked Account",
+            "value": "limit_wc"
           },
           {
-            "value": "gd_unenroll",
-            "text": "When a device account is deleted"
+            "text": "Too Many Calls to /userinfo",
+            "value": "limit_ui"
           },
           {
-            "value": "gd_update_device_account",
-            "text": "When a device account is updated"
+            "text": "Rate Limit On API",
+            "value": "api_limit"
           },
           {
-            "value": "gd_send_pn",
-            "text": "When a push notification is sent"
+            "text": "Successful User Deletion",
+            "value": "sdu"
           },
           {
-            "value": "gd_send_sms",
-            "text": "When a SMS is sent"
+            "text": "Failed User Deletion",
+            "value": "fdu"
           },
           {
-            "value": "gd_start_auth",
-            "text": "Start second factor authentication"
+            "text": "Blocked Account",
+            "value": "limit_wc"
           },
           {
-            "value": "gd_start_enroll",
-            "text": "Second factor auth enrollment is started"
+            "text": "Blocked IP Address",
+            "value": "limit_mu"
           },
           {
-            "value": "gd_module_switch",
-            "text": "When changing feature config"
+            "text": "Success Logout",
+            "value": "slo"
           },
           {
-            "value": "gd_tenant_update",
-            "text": "When tenant info has been updated"
+            "text": "Failed Logout",
+            "value": "flo"
           },
           {
-            "value": "gd_user_delete",
-            "text": "When calling (user delete => unenroll)"
+            "text": "Success Delegation",
+            "value": "sd"
           },
           {
-            "value": "gd_auth_failed",
-            "text": "When second factor login has failed"
-          },
-          {
-            "value": "gd_auth_succeed",
-            "text": "When second factor authentication has succeeded"
-          },
-          {
-            "value": "gd_recovery_succeed",
-            "text": "Recovery succeeded"
-          },
-          {
-            "value": "gd_recovery_failed",
-            "text": "Failed recovery"
-          },
-          {
-            "value": "gd_otp_rate_limit_exceed",
-            "text": "When One Time Password fails validation because rate limit is exceeded"
-          },
-          {
-            "value": "gd_recovery_rate_limit_exceed",
-            "text": "When recovery validation fails because rate limit is exceeded"
+            "text": "Failed Delegation",
+            "value": "fd"
           }
         ]
       }
@@ -1858,6 +1881,7 @@
     "title": "Auth0 Logs to Papertrail",
     "name": "auth0-logs-to-papertrail",
     "version": "2.0.0",
+    "preVersion": "2.0.0",
     "author": "auth0",
     "description": "This extension will take all of your Auth0 logs and export them to Papertrail",
     "initialUrlPath": "/login",
@@ -2150,7 +2174,8 @@
   {
     "title": "Auth0 Account Link",
     "name": "auth0-account-link",
-    "version": "2.1.1",
+    "version": "2.3.0",
+    "preVersion": "2.1.1",
     "author": "auth0",
     "description": "This extension gives Auth0 customers the ability to allow their users to link their accounts",
     "type": "application",
@@ -2174,13 +2199,15 @@
       "createClient": true,
       "onUninstallPath": "/.extensions/on-uninstall",
       "onInstallPath": "/.extensions/on-install",
+      "onUpdatePath": "/.extensions/on-install",
       "scopes": "read:connections read:users read:rules create:rules update:rules delete:rules delete:clients"
     }
   },
   {
     "title": "GitLab Deployments",
     "name": "auth0-gitlab-deploy",
-    "version": "2.3.1",
+    "version": "2.4.0",
+    "preVersion": "2.3.1",
     "author": "auth0",
     "description": "This extension gives Auth0 customers the possibility to deploy Hosted Pages, Rules and Custom Database Connections from GitLab.",
     "type": "application",
@@ -2198,7 +2225,7 @@
     "auth0": {
       "createClient": true,
       "onUninstallPath": "/.extensions/on-uninstall",
-      "scopes": "read:tenant_settings update:tenant_settings update:clients read:clients read:connections update:connections read:rules create:rules update:rules delete:rules delete:clients"
+      "scopes": "read:tenant_settings update:tenant_settings create:clients read:clients update:clients read:connections update:connections read:rules create:rules update:rules delete:rules delete:clients read:resource_servers create:resource_servers update:resource_servers read:rules_configs delete:rules_configs update:rules_configs"
     },
     "secrets": {
       "GITLAB_REPOSITORY": {
@@ -2232,6 +2259,7 @@
     "title": "Auth0 Authorization",
     "name": "auth0-authz",
     "version": "2.4.9",
+    "preVersion": "2.4.9",
     "author": "auth0",
     "description": "This extension gives Auth0 customers the possibility to manage group memberships for their users.",
     "type": "application",
@@ -2306,7 +2334,8 @@
   {
     "title": "SSO Dashboard",
     "name": "auth0-sso-dashboard",
-    "version": "1.1.5",
+    "version": "2.0.0",
+    "preVersion": "1.1.6",
     "author": "Auth0",
     "useHashName": false,
     "description": "This extension provides your users with a dashboard for all of their applications.",
@@ -2472,6 +2501,7 @@
     "title": "Auth0 Logs to Application Insights",
     "name": "auth0-logs-to-application-insights",
     "version": "2.0.5",
+    "preVersion": "2.0.5",
     "author": "auth0",
     "description": "This extension will take all of your Auth0 logs and export them to Application Insights",
     "type": "cron",
@@ -2756,7 +2786,8 @@
   {
     "title": "Bitbucket Deployments",
     "name": "auth0-bitbucket-deploy",
-    "version": "2.2.5",
+    "version": "2.3.0",
+    "preVersion": "2.2.5",
     "author": "auth0",
     "description": "This extension gives Auth0 customers the possibility to deploy Hosted Pages, Rules and Custom Database Connections from Bitbucket.",
     "type": "application",
@@ -2861,6 +2892,7 @@
     "title": "Auth0 Authentication API Debugger",
     "name": "auth0-authentication-api-debugger",
     "version": "1.1.2",
+    "preVersion": "1.1.2",
     "author": "auth0",
     "useHashName": false,
     "description": "This extension allows you to test and debug the various Authentication API endpoints",
@@ -2880,6 +2912,7 @@
     "title": "Auth0 Logs to Loggly",
     "name": "auth0-logs-to-loggly",
     "version": "2.0.3",
+    "preVersion": "2.0.3",
     "author": "auth0",
     "description": "This extension will take all of your Auth0 logs and export them to Loggly",
     "initialUrlPath": "/login",
@@ -3168,11 +3201,11 @@
   {
     "title": "Real-time Webtask Logs",
     "name": "auth0-extension-realtime-logs",
-    "version": "1.2.0",
+    "version": "1.3.1",
     "author": "Auth0, Inc",
     "description": "Access real-time webtask logs",
     "type": "application",
-    "category": "end_user",
+    "repository": "https://github.com/auth0/auth0-extension-realtime-logs",
     "keywords": [
       "auth0",
       "extension",
@@ -3184,7 +3217,8 @@
   {
     "title": "User Import / Export",
     "name": "auth0-user-import-export",
-    "version": "2.4.3",
+    "version": "2.4.4",
+    "preVersion": "2.4.3",
     "author": "auth0",
     "useHashName": false,
     "description": "This extension allows you to import/export users from/to your account.",
@@ -3206,6 +3240,7 @@
         "name": "appliance",
         "overrides": {
           "version": "1.7.0",
+          "preVersion": "1.7.0",
           "auth0": {
             "scopes": "create:users read:users read:connections"
           }
@@ -3216,7 +3251,8 @@
   {
     "title": "Auth0 Logs to Sumo Logic",
     "name": "auth0-logs-to-sumologic",
-    "version": "2.0.6",
+    "version": "2.0.7",
+    "preVersion": "2.0.6",
     "author": "auth0",
     "description": "This extension will take all of your Auth0 logs and export them to Sumo Logic",
     "type": "cron",
@@ -3501,7 +3537,8 @@
   {
     "title": "Auth0 Logs to Splunk",
     "name": "auth0-logs-to-splunk",
-    "version": "2.1.0",
+    "version": "2.1.1",
+    "preVersion": "2.1.0",
     "author": "auth0",
     "description": "This extension will take all of your Auth0 logs and export them to Splunk",
     "type": "cron",
@@ -3802,6 +3839,7 @@
     "title": "Auth0 Logs to CloudWatch",
     "name": "auth0-logs-to-cloudwatch",
     "version": "2.0.0",
+    "preVersion": "2.0.0",
     "author": "auth0",
     "description": "This extension will take all of your Auth0 logs and export them to CloudWatch",
     "type": "cron",
