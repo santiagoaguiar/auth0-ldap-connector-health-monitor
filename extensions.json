@@ -2375,7 +2375,7 @@
   {
     "title": "Delegated Administration Dashboard",
     "name": "auth0-delegated-admin",
-    "version": "2.6.2",
+    "version": "3.0.0",
     "preVersion": "2.6.2",
     "author": "auth0",
     "useHashName": false,
@@ -2429,8 +2429,12 @@
         "description": "Engine for searching users",
         "type": "select",
         "allowMultiple": false,
-        "default": "v3",
+        "default": "default",
         "options": [
+          {
+            "value": "default",
+            "text": "Default"
+          },
           {
             "value": "v2",
             "text": "v2"
