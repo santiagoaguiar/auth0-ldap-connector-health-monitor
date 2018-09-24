@@ -1,6 +1,6 @@
 {
   "name": "auth0-extensions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "List of available extensions",
   "scripts": {
@@ -36,6 +36,6 @@
     "superagent-bluebird-promise": "^3.0.0"
   },
   "dependencies": {
-    "webtask-json-validator": "^1.1.7"
+    "webtask-json-validator": "^1.1.17"
   }
 }

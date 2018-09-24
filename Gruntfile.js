@@ -143,27 +143,25 @@ module.exports = function (grunt) {
     var fileName   = !!environmentName ? `extensions-${environmentName}.json` : 'extensions.json';
 
     var extensions = extensions.reduce(function(exts, ext) {
-      var environments = ext.environments || [];
-      var environment  = environments.find(function(env) {
-        return env.name === environmentName;
-      }) || {};
+      var environments = ext.environments || {};
+      Object.keys(environments).forEach(function (environment) {
+        var overrides = environments[environment];
 
-      // Handle environment specific extension filtering
-      if (environment.filter === true) {
-        return exts;
-      }
+        // Omit the extension for a particular environment
+        if (overrides === false) {
+          return;
+        }
 
-      // Handle environment specific property overrides.
-      if (environment.overrides) {
-        Object.keys(environment.overrides).forEach(function(propertyName) {
-          ext[propertyName] = environment.overrides[propertyName];
+        // Handle environment specific property overrides.
+        Object.keys(overrides).forEach(function (propertyName) {
+          ext[propertyName] = overrides[propertyName];
         });
-      }
+
+        exts.push(ext);
+      });
 
       // Cleaning up environments property from generated extension files.
       delete ext.environments;
-
-      exts.push(ext);
       return exts;
     }, []);
 
