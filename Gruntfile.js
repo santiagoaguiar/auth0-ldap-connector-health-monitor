@@ -148,20 +148,20 @@ module.exports = function (grunt) {
         var overrides = environments[environment];
 
         // Omit the extension for a particular environment
-        if (overrides === false) {
-          return;
-        }
+        // if (overrides === false) {
+        //   return;
+        // }
 
         // Handle environment specific property overrides.
         Object.keys(overrides).forEach(function (propertyName) {
           ext[propertyName] = overrides[propertyName];
         });
-
-        exts.push(ext);
       });
 
       // Cleaning up environments property from generated extension files.
       delete ext.environments;
+
+      exts.push(ext);
       return exts;
     }, []);
 
