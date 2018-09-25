@@ -142,20 +142,13 @@ module.exports = function (grunt) {
     var extensions = grunt.file.readJSON('extensions.json');
     var fileName   = !!environmentName ? `extensions-${environmentName}.json` : 'extensions.json';
 
+    // Handle environment specific property overrides.
     var extensions = extensions.reduce(function(exts, ext) {
       var environments = ext.environments || {};
-      Object.keys(environments).forEach(function (environment) {
-        var overrides = environments[environment];
 
-        // Omit the extension for a particular environment
-        // if (overrides === false) {
-        //   return;
-        // }
-
-        // Handle environment specific property overrides.
-        Object.keys(overrides).forEach(function (propertyName) {
-          ext[propertyName] = overrides[propertyName];
-        });
+      var overrides = environments[environmentName] || {};
+      Object.keys(overrides).forEach(function (propertyName) {
+        ext[propertyName] = overrides[propertyName];
       });
 
       // Cleaning up environments property from generated extension files.
