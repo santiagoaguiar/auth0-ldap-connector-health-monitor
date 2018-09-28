@@ -952,10 +952,6 @@
             "value": "fapi"
           },
           {
-            "text": "Blocked Account",
-            "value": "limit_wc"
-          },
-          {
             "text": "Too Many Calls to /userinfo",
             "value": "limit_ui"
           },
@@ -1236,10 +1232,6 @@
           {
             "text": "Failed API Operation",
             "value": "fapi"
-          },
-          {
-            "text": "Blocked Account",
-            "value": "limit_wc"
           },
           {
             "text": "Too Many Calls to /userinfo",
@@ -1539,10 +1531,6 @@
             "value": "fapi"
           },
           {
-            "text": "Blocked Account",
-            "value": "limit_wc"
-          },
-          {
             "text": "Too Many Calls to /userinfo",
             "value": "limit_ui"
           },
@@ -1828,10 +1816,6 @@
           {
             "text": "Failed API Operation",
             "value": "fapi"
-          },
-          {
-            "text": "Blocked Account",
-            "value": "limit_wc"
           },
           {
             "text": "Too Many Calls to /userinfo",
@@ -2122,10 +2106,6 @@
           {
             "text": "Failed API Operation",
             "value": "fapi"
-          },
-          {
-            "text": "Blocked Account",
-            "value": "limit_wc"
           },
           {
             "text": "Too Many Calls to /userinfo",
@@ -2670,10 +2650,6 @@
             "value": "fapi"
           },
           {
-            "text": "Blocked Account",
-            "value": "limit_wc"
-          },
-          {
             "text": "Too Many Calls to /userinfo",
             "value": "limit_ui"
           },
@@ -3086,10 +3062,6 @@
             "value": "fapi"
           },
           {
-            "text": "Blocked Account",
-            "value": "limit_wc"
-          },
-          {
             "text": "Too Many Calls to /userinfo",
             "value": "limit_ui"
           },
@@ -3422,10 +3394,6 @@
             "value": "fapi"
           },
           {
-            "text": "Blocked Account",
-            "value": "limit_wc"
-          },
-          {
             "text": "Too Many Calls to /userinfo",
             "value": "limit_ui"
           },
@@ -3723,10 +3691,6 @@
             "value": "fapi"
           },
           {
-            "text": "Blocked Account",
-            "value": "limit_wc"
-          },
-          {
             "text": "Too Many Calls to /userinfo",
             "value": "limit_ui"
           },
@@ -4022,10 +3986,6 @@
           {
             "text": "Failed API Operation",
             "value": "fapi"
-          },
-          {
-            "text": "Blocked Account",
-            "value": "limit_wc"
           },
           {
             "text": "Too Many Calls to /userinfo",
