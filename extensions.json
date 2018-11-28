@@ -3633,8 +3633,8 @@
   {
     "title": "Auth0 Logs to Splunk",
     "name": "auth0-logs-to-splunk",
-    "version": "2.1.1",
-    "preVersion": "2.1.0",
+    "version": "2.2.0",
+    "preVersion": "2.0.3",
     "author": "auth0",
     "description": "This extension will take all of your Auth0 logs and export them to Splunk",
     "type": "cron",
@@ -3882,6 +3882,10 @@
           {
             "text": "Failed API Operation",
             "value": "fapi"
+          },
+          {
+            "text": "Blocked Account",
+            "value": "limit_wc"
           },
           {
             "text": "Too Many Calls to /userinfo",
