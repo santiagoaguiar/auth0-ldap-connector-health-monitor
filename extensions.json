@@ -3371,8 +3371,8 @@
   {
     "title": "GitHub Deployments",
     "name": "auth0-github-deploy",
-    "version": "2.5.0",
-    "preVersion": "2.4.0",
+    "version": "2.6.0",
+    "preVersion": "2.5.0",
     "author": "auth0",
     "description": "This extension gives Auth0 customers the possibility to deploy Pages, Rules and Custom Database Connections from GitHub.",
     "type": "application",
@@ -3393,25 +3393,25 @@
       "scopes": "read:client_grants create:client_grants delete:client_grants update:client_grants read:clients update:clients delete:clients create:clients read:client_keys update:client_keys delete:client_keys create:client_keys read:connections update:connections delete:connections create:connections read:resource_servers update:resource_servers delete:resource_servers create:resource_servers read:rules update:rules delete:rules create:rules read:rules_configs update:rules_configs delete:rules_configs read:email_provider update:email_provider delete:email_provider create:email_provider read:tenant_settings update:tenant_settings read:grants delete:grants read:guardian_factors update:guardian_factors read:email_templates create:email_templates update:email_templates"
     },
     "secrets": {
-      "GITHUB_REPOSITORY": {
+      "REPOSITORY": {
         "example": "myorganization/myrepo",
         "description": "The repository from which you want to deploy rules and database scripts",
         "required": true
       },
-      "GITHUB_BRANCH": {
+      "BRANCH": {
         "description": "The branch we should monitor for commits",
         "default": "master",
         "required": true
       },
-      "GITHUB_HOST": {
+      "HOST": {
         "description": "GitHub Enterprise host, leave empty for github.com",
         "example": "github.my-company.com"
       },
-      "GITHUB_API_PATH": {
+      "API_PATH": {
         "description": "GitHub Enterprise API path prefix, leave empty for github.com",
         "example": "/api/v3"
       },
-      "GITHUB_TOKEN": {
+      "TOKEN": {
         "description": "Your personal access token for GitHub",
         "required": true,
         "type": "password"
