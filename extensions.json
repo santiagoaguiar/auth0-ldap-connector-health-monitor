@@ -253,18 +253,11 @@
     }
   },
   {
-    "title": "Auth0 Authentication API webhooks",
-    "name": "auth0-authentication-api-webhooks",
-    "version": "2.1.3",
-    "preVersion": "2.1.0",
     "author": "auth0",
-    "description": "Allows you to define webhooks for Auth0's Authentication API. It will go through the audit logs and call a webhook for specific events.",
     "type": "cron",
-    "initialUrlPath": "/login",
     "category": "webhook",
-    "repository": "https://github.com/auth0/auth0-authentication-api-webhooks",
-    "docsUrl": "https://auth0.com/docs/extensions/authentication-api-webhooks",
-    "logoUrl": "https://cdn.auth0.com/extensions/auth0-authentication-api-webhooks/assets/logo.svg",
+    "initialUrlPath": "/login",
+    "repository": "https://github.com/auth0-extensions/auth0-logs-to-provider",
     "keywords": [
       "auth0",
       "extension"
@@ -277,37 +270,8 @@
     },
     "secrets": {
       "BATCH_SIZE": {
-        "description": "The amount of logs to be read on each execution. Maximum is 100.",
+        "description": "The amount of logs to batch before sending. A single cron execution will send multiple batches.",
         "default": 100
-      },
-      "WEBHOOK_URL": {
-        "required": true,
-        "type": "text"
-      },
-      "AUTHORIZATION": {
-        "description": "Authorization Header (optional).",
-        "example": "Basic dm9yZGVsOnZvcmRlbA==",
-        "type": "text"
-      },
-      "SEND_AS_BATCH": {
-        "description": "If enabled, extension will send entire batch in one request. Otherwise, it will send requests one by one.",
-        "type": "select",
-        "allowMultiple": false,
-        "default": "true",
-        "options": [
-          {
-            "value": "true",
-            "text": "Enabled"
-          },
-          {
-            "value": "false",
-            "text": "Disabled"
-          }
-        ]
-      },
-      "WEBHOOK_CONCURRENT_CALLS": {
-        "description": "The maximum concurrent calls that will be made to your webhook",
-        "default": 5
       },
       "START_FROM": {
         "description": "Checkpoint ID of log to start from."
@@ -332,33 +296,33 @@
         ]
       },
       "LOG_LEVEL": {
-        "description": "This allows you to specify the log level of events that need to be sent",
+        "description": "This allows you to specify the log level of events that need to be sent. Selected level includes all levels above.",
         "type": "select",
-        "allowMultiple": true,
+        "allowMultiple": false,
         "options": [
           {
             "value": "-",
             "text": ""
           },
           {
-            "value": "0",
-            "text": "Debug"
-          },
-          {
-            "value": "1",
-            "text": "Info"
-          },
-          {
-            "value": "2",
-            "text": "Warning"
+            "value": "4",
+            "text": "Critical"
           },
           {
             "value": "3",
             "text": "Error"
           },
           {
-            "value": "4",
-            "text": "Critical"
+            "value": "2",
+            "text": "Warning"
+          },
+          {
+            "value": "1",
+            "text": "Info"
+          },
+          {
+            "value": "0",
+            "text": "Debug"
           }
         ]
       },
@@ -568,6 +532,14 @@
             "value": "fn"
           },
           {
+            "text": "API Operation",
+            "value": "sapi"
+          },
+          {
+            "text": "Failed API Operation",
+            "value": "fapi"
+          },
+          {
             "text": "Blocked Account",
             "value": "limit_wc"
           },
@@ -736,8 +708,47 @@
             "value": "ublkdu"
           }
         ]
+      },
+      "WEBHOOK_URL": {
+        "required": true,
+        "type": "text"
+      },
+      "AUTHORIZATION": {
+        "description": "Authorization Header (optional).",
+        "example": "Basic dm9yZGVsOnZvcmRlbA==",
+        "type": "text"
+      },
+      "SEND_AS_BATCH": {
+        "description": "If enabled, extension will send entire batch in one request. Otherwise, it will send requests one by one.",
+        "type": "select",
+        "allowMultiple": false,
+        "default": "true",
+        "options": [
+          {
+            "value": "true",
+            "text": "Enabled"
+          },
+          {
+            "value": "false",
+            "text": "Disabled"
+          }
+        ]
+      },
+      "WEBHOOK_CONCURRENT_CALLS": {
+        "description": "The maximum concurrent calls that will be made to your webhook",
+        "default": 5,
+        "visibleIf": {
+          "SEND_AS_BATCH": "false"
+        }
       }
-    }
+    },
+    "title": "Auth0 Authentication API webhooks",
+    "name": "auth0-authentication-api-webhooks",
+    "version": "2.2.0",
+    "preVersion": "2.1.3",
+    "description": "Allows you to define webhooks for Auth0's Authentication API. It will go through the audit logs and call a webhook for specific events.",
+    "docsUrl": "https://auth0.com/docs/extensions/authentication-api-webhooks",
+    "logoUrl": "https://cdn.auth0.com/extensions/auth0-authentication-api-webhooks/assets/logo.svg"
   },
   {
     "title": "Auth0 Logs to Azure Blob Storage",
