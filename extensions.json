@@ -3971,8 +3971,8 @@
   {
     "title": "GitHub Deployments",
     "name": "auth0-github-deploy",
-    "version": "2.6.2",
-    "preVersion": "2.5.0",
+    "version": "2.7.0",
+    "preVersion": "2.6.2",
     "author": "auth0",
     "description": "This extension gives Auth0 customers the possibility to deploy Pages, Rules and Custom Database Connections from GitHub.",
     "type": "application",
@@ -4019,6 +4019,29 @@
       "BASE_DIR": {
         "example": "settings/tenant",
         "description": "Path to your tenant settings directories"
+      },
+      "ENABLE_CIPHER": {
+        "description": "Enables support of encrypted secrets",
+        "type": "select",
+        "default": "false",
+        "allowMultiple": false,
+        "options": [
+          {
+            "value": "false",
+            "text": "No"
+          },
+          {
+            "value": "true",
+            "text": "Yes"
+          }
+        ]
+      },
+      "CIPHER_PASSWORD": {
+        "required": true,
+        "description": "Password for encode/decode secrets",
+        "visibleIf": {
+          "ENABLE_CIPHER": "true"
+        }
       },
       "SLACK_INCOMING_WEBHOOK_URL": {
         "example": "https://hooks.slack.com/services/...",
