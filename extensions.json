@@ -3350,8 +3350,8 @@
   {
     "title": "SSO Dashboard",
     "name": "auth0-sso-dashboard",
-    "version": "2.2.1",
-    "preVersion": "2.1.1",
+    "version": "2.3.0",
+    "preVersion": "2.2.1",
     "author": "Auth0",
     "useHashName": false,
     "description": "This extension provides your users with a dashboard for all of their applications.",
@@ -3386,7 +3386,7 @@
         "example": "https://cdn.fabrikam.com/static/extensions/theme/fabrikam.css",
         "required": false
       },
-      "AUTH0_ISSUER_DOMAIN": {
+      "AUTH0_CUSTOM_DOMAIN": {
         "description": "Custom domain",
         "example": "example.com",
         "required": false
