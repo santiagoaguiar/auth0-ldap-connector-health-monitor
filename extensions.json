@@ -20,8 +20,8 @@
   {
     "title": "Visual Studio Team Services Deployments",
     "name": "auth0-visualstudio-deploy",
-    "version": "2.7.1",
-    "preVersion": "2.6.2",
+    "version": "2.8.0",
+    "preVersion": "2.7.1",
     "author": "auth0",
     "description": "This extension gives Auth0 customers the possibility to deploy Hosted Pages, Rules and Custom Database Connections from Visual Studio Team Services.",
     "type": "application",
@@ -39,7 +39,7 @@
     "auth0": {
       "createClient": true,
       "onUninstallPath": "/.extensions/on-uninstall",
-      "scopes": "read:client_grants create:client_grants delete:client_grants update:client_grants read:clients update:clients delete:clients create:clients read:client_keys update:client_keys delete:client_keys create:client_keys read:connections update:connections delete:connections create:connections read:resource_servers update:resource_servers delete:resource_servers create:resource_servers read:rules update:rules delete:rules create:rules read:rules_configs update:rules_configs delete:rules_configs read:email_provider update:email_provider delete:email_provider create:email_provider read:tenant_settings update:tenant_settings read:grants delete:grants read:guardian_factors update:guardian_factors read:email_templates create:email_templates update:email_templates"
+      "scopes": "read:client_grants create:client_grants delete:client_grants update:client_grants read:clients update:clients delete:clients create:clients read:client_keys update:client_keys delete:client_keys create:client_keys read:connections update:connections delete:connections create:connections read:resource_servers update:resource_servers delete:resource_servers create:resource_servers read:rules update:rules delete:rules create:rules read:rules_configs update:rules_configs delete:rules_configs read:email_provider update:email_provider delete:email_provider create:email_provider read:tenant_settings update:tenant_settings read:grants delete:grants read:guardian_factors update:guardian_factors read:email_templates create:email_templates update:email_templates read:roles update:roles delete:roles create:roles"
     },
     "secrets": {
       "TYPE": {
@@ -61,7 +61,7 @@
       },
       "REPOSITORY": {
         "example": "MyFirstProject",
-        "description": "The project from which you want to deploy rules and database scripts",
+        "description": "The project from which you want to deploy rules and database scripts. To use a specific repository within a project, format your input value as follows: `projectName/repoName`.",
         "required": true
       },
       "BRANCH": {
@@ -80,17 +80,17 @@
         }
       },
       "INSTANCE": {
-        "example": "INSTANCE.visualstudio.com",
-        "description": "Your Visual Studio Team Services instance name (without .visualstudio.com)",
+        "example": "ORGANIZATION.visualstudio.com or dev.azure.com/ORGANIZATION",
+        "description": "Your Visual Studio Team Services/Azure DevOps organization name (without .visualstudio.com or dev.azure.com)",
         "required": true
       },
       "COLLECTION": {
-        "description": "Your visualstudio collection",
+        "description": "Your visualstudio/azure devops collection",
         "default": "DefaultCollection",
         "required": true
       },
       "USERNAME": {
-        "description": "Your Visual Studio Team Services username",
+        "description": "Your Visual Studio Team Services / Azure DevOps username",
         "required": true
       },
       "AUTH_METHOD": {
@@ -111,7 +111,7 @@
         ]
       },
       "PASSWORD": {
-        "description": "Your Visual Studio password (Alternate authentication credentials)",
+        "description": "Your Visual Studio / Azure DevOps password (Alternate authentication credentials)",
         "required": true,
         "type": "password",
         "visibleIf": {
@@ -119,7 +119,7 @@
         }
       },
       "TOKEN": {
-        "description": "Your personal access token for Visual Studio Team Services",
+        "description": "Your personal access token for Visual Studio Team Services / Azure DevOps",
         "required": true,
         "type": "password",
         "visibleIf": {
@@ -156,6 +156,23 @@
         "visibleIf": {
           "ENABLE_CIPHER": "true"
         }
+      },
+      "AUTH0_ALLOW_DELETE": {
+        "description": "Allows the extension to delete objects that does not exist within the repository.",
+        "type": "select",
+        "required": true,
+        "default": "false",
+        "allowMultiple": false,
+        "options": [
+          {
+            "value": "false",
+            "text": "No"
+          },
+          {
+            "value": "true",
+            "text": "Yes"
+          }
+        ]
       },
       "SLACK_INCOMING_WEBHOOK_URL": {
         "example": "https://hooks.slack.com/services/...",
