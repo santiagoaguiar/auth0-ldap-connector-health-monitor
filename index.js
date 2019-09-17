@@ -57,11 +57,12 @@ module.exports = (ctx, req, res) => {
           'Authorization': `Bearer ${token}`
         }
       }, (err, resp, body) => {
-        body = JSON.parse(body);
-
         if (err) return end(500, { message: 'Error calling the monitoring endpoint.', details: err.message });
         else if (resp.statusCode === 404) return end(400, { message: 'The connection does not exist.' });
-        else if (body.strategy !== 'ad' && body.strategy !== 'auth0-adldap') {
+        else if (resp.statusCode !== 200) return end(400, { message: 'Failed to obtain connection information.' });
+
+        body = JSON.parse(body);
+        if (body.strategy !== 'ad' && body.strategy !== 'auth0-adldap') {
           return end(400, { message: 'The connection is not an AD/LDAP connection.' });
         }
 
