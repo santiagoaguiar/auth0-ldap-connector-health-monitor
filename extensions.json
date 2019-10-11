@@ -6196,5 +6196,32 @@
     "name": "auth0-logs-to-segment",
     "version": "2.0.1",
     "description": "This extension will take all of your Auth0 logs and export them to Segment"
+  },
+  {
+    "title": "Auth0 Deploy CLI",
+    "name": "auth0-deploy-cli-extension",
+    "version": "2.1.0",
+    "preVersion": "2.0.0",
+    "author": "auth0",
+    "description": "The Auth0 Deploy Extension helps configure your Auth0 Tenant to use Auth0 Deploy CLI",
+    "type": "application",
+    "useHashName": false,
+    "docsUrl": "https://github.com/auth0/auth0-deploy-cli/blob/master/README.md",
+    "logoUrl": "http://openid.net/wordpress-content/uploads/2016/05/auth0-logo-blue.png",
+    "codeUrl": "https://raw.githubusercontent.com/auth0-extensions/auth0-deploy-cli-extension/master/build/bundle.js",
+    "initialUrlPath": "/admins/login",
+    "uninstallConfirmMessage": "Do you really want to uninstall this extension? Doing so will also remove the client.",
+    "repository": "https://github.com/auth0-extensions/auth0-deploy-cli-extension",
+    "keywords": [
+      "auth0",
+      "extension",
+      "deploy",
+      "cli"
+    ],
+    "auth0": {
+      "createClient": true,
+      "onUninstallPath": "/.extensions/on-uninstall",
+      "scopes": "read:client_grants create:client_grants delete:client_grants update:client_grants read:clients update:clients delete:clients create:clients read:client_keys update:client_keys delete:client_keys create:client_keys read:connections update:connections delete:connections create:connections read:resource_servers update:resource_servers delete:resource_servers create:resource_servers read:rules update:rules delete:rules create:rules read:rules_configs update:rules_configs delete:rules_configs read:email_provider update:email_provider delete:email_provider create:email_provider read:tenant_settings update:tenant_settings read:grants delete:grants read:guardian_factors update:guardian_factors read:email_templates create:email_templates update:email_templates read:roles update:roles delete:roles create:roles read:prompts update:prompts read:branding update:branding read:hooks update:hooks delete:hooks create:hooks"
+    }
   }
 ]
