@@ -436,8 +436,16 @@
             "value": "sercft"
           },
           {
+            "text": "Success Exchange",
+            "value": "sens"
+          },
+          {
             "text": "Failed Exchange",
             "value": "fercft"
+          },
+          {
+            "text": "Failed Exchange",
+            "value": "fens"
           },
           {
             "text": "Failed Login",
