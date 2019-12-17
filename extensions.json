@@ -946,6 +946,14 @@
             "value": "fercft"
           },
           {
+            "text": "Success Exchange",
+            "value": "sens"
+          },
+          {
+            "text": "Failed Exchange",
+            "value": "fens"
+          },
+          {
             "text": "Failed Login",
             "value": "f"
           },
@@ -1421,6 +1429,14 @@
             "value": "fercft"
           },
           {
+            "text": "Success Exchange",
+            "value": "sens"
+          },
+          {
+            "text": "Failed Exchange",
+            "value": "fens"
+          },
+          {
             "text": "Failed Login",
             "value": "f"
           },
@@ -1888,6 +1904,14 @@
           {
             "text": "Failed Exchange",
             "value": "fercft"
+          },
+          {
+            "text": "Success Exchange",
+            "value": "sens"
+          },
+          {
+            "text": "Failed Exchange",
+            "value": "fens"
           },
           {
             "text": "Failed Login",
@@ -2374,6 +2398,14 @@
           {
             "text": "Failed Exchange",
             "value": "fercft"
+          },
+          {
+            "text": "Success Exchange",
+            "value": "sens"
+          },
+          {
+            "text": "Failed Exchange",
+            "value": "fens"
           },
           {
             "text": "Failed Login",
@@ -2872,6 +2904,14 @@
           {
             "text": "Failed Exchange",
             "value": "fercft"
+          },
+          {
+            "text": "Success Exchange",
+            "value": "sens"
+          },
+          {
+            "text": "Failed Exchange",
+            "value": "fens"
           },
           {
             "text": "Failed Login",
@@ -3675,6 +3715,14 @@
             "value": "fercft"
           },
           {
+            "text": "Success Exchange",
+            "value": "sens"
+          },
+          {
+            "text": "Failed Exchange",
+            "value": "fens"
+          },
+          {
             "text": "Failed Login",
             "value": "f"
           },
@@ -4343,6 +4391,14 @@
             "value": "fercft"
           },
           {
+            "text": "Success Exchange",
+            "value": "sens"
+          },
+          {
+            "text": "Failed Exchange",
+            "value": "fens"
+          },
+          {
             "text": "Failed Login",
             "value": "f"
           },
@@ -4866,6 +4922,14 @@
             "value": "fercft"
           },
           {
+            "text": "Success Exchange",
+            "value": "sens"
+          },
+          {
+            "text": "Failed Exchange",
+            "value": "fens"
+          },
+          {
             "text": "Failed Login",
             "value": "f"
           },
@@ -5334,6 +5398,14 @@
           {
             "text": "Failed Exchange",
             "value": "fercft"
+          },
+          {
+            "text": "Success Exchange",
+            "value": "sens"
+          },
+          {
+            "text": "Failed Exchange",
+            "value": "fens"
           },
           {
             "text": "Failed Login",
@@ -5818,6 +5890,14 @@
           {
             "text": "Failed Exchange",
             "value": "fercft"
+          },
+          {
+            "text": "Success Exchange",
+            "value": "sens"
+          },
+          {
+            "text": "Failed Exchange",
+            "value": "fens"
           },
           {
             "text": "Failed Login",
