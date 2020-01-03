@@ -3500,22 +3500,21 @@
     }
   },
   {
-    "title": "Delegated Administration Dashboard",
     "name": "auth0-delegated-admin",
-    "version": "3.7.0",
-    "author": "auth0",
-    "useHashName": false,
+    "version": "3.7.1",
     "description": "This extension allows non-dashboard administrators to manage (a subset of) users.",
-    "type": "application",
-    "category": "end_user",
-    "logoUrl": "https://cdn.auth0.com/extensions/auth0-delegated-admin/assets/logo.svg",
-    "initialUrlPath": "/",
-    "docsUrl": "https://auth0.com/docs/extensions/delegated-admin",
-    "repository": "https://github.com/auth0-extensions/auth0-delegated-administration-extension",
     "keywords": [
       "auth0",
       "extension"
     ],
+    "author": "Auth0",
+    "repository": "https://github.com/auth0-extensions/auth0-delegated-administration-extension",
+    "title": "Delegated Administration Dashboard",
+    "type": "application",
+    "category": "end_user",
+    "docsUrl": "https://auth0.com/docs/extensions/delegated-admin",
+    "logoUrl": "https://cdn.auth0.com/extensions/auth0-delegated-admin/assets/logo.svg",
+    "initialUrlPath": "/",
     "auth0": {
       "createClient": true,
       "onUninstallPath": "/.extensions/on-uninstall",
@@ -3541,11 +3540,6 @@
         "example": "https://cdn.fabrikam.com/static/extensions/theme/favicon.png",
         "required": false
       },
-      "AUTH0_CUSTOM_DOMAIN": {
-        "description": "Custom domain",
-        "example": "example.com",
-        "required": false
-      },
       "FEDERATED_LOGOUT": {
         "description": "Also sign out from the IDP when users logout?",
         "type": "select",
@@ -3561,7 +3555,8 @@
           }
         ]
       }
-    }
+    },
+    "useHashName": false
   },
   {
     "author": "auth0",
