@@ -5887,14 +5887,6 @@
             "value": "fercft"
           },
           {
-            "text": "Success Exchange",
-            "value": "sens"
-          },
-          {
-            "text": "Failed Exchange",
-            "value": "fens"
-          },
-          {
             "text": "Failed Login",
             "value": "f"
           },
@@ -6197,6 +6189,14 @@
           {
             "text": "Account unblocked",
             "value": "ublkdu"
+          },
+          {
+            "text": "Success Exchange",
+            "value": "sens"
+          },
+          {
+            "text": "Failed Exchange",
+            "value": "fens"
           }
         ]
       },
@@ -6223,7 +6223,7 @@
     },
     "title": "Logs to CloudWatch",
     "name": "logs-to-cloudwatch",
-    "version": "2.1.1",
+    "version": "2.1.2",
     "description": "This extension will take all of your Auth0 logs and export them to CloudWatch",
     "logoUrl": "https://truesightpulse.bmc.com/wp-content/uploads/2016/11/cloudwatch.png"
   },
