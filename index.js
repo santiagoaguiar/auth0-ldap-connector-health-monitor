@@ -63,7 +63,8 @@ module.exports = (ctx, req, res) => {
         qs: {
           name: connectionName,
           page: 0,
-          per_page: 1
+          per_page: 1,
+          fields: "id,strategy"
         },
         json: true
       }, (err, resp, body) => {
