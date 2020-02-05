@@ -12,11 +12,11 @@ wt init
 wt create https://raw.githubusercontent.com/auth0/auth0-ldap-connector-health-monitor/master/index.js \
     --name auth0-ldap-connector-health-monitor \
     --secret AUTH0_DOMAIN="YOUR_AUTH0_DOMAIN" \
-    --secret AUTH0_GLOBAL_CLIENT_ID="YOUR_AUTH0_GLOBAL_CLIENT_ID" \
-    --secret AUTH0_GLOBAL_CLIENT_SECRET="YOUR_AUTH0_GLOBAL_CLIENT_SECRET"
+    --secret AUTH0_CLIENT_ID="YOUR_AUTH0_CLIENT_ID" \
+    --secret AUTH0_CLIENT_SECRET="YOUR_AUTH0_CLIENT_SECRET"
 ```
 
-> You can get your Global Client Id/Secret here: https://auth0.com/docs/api/v1
+The client ID and secret must be for a Machine-to-Machine Application with access to the Management API and a `read:connections` grant. See https://auth0.com/docs/api/management/v2/create-m2m-app for more information.
 
 ## Usage
 

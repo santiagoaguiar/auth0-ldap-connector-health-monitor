@@ -9,7 +9,8 @@ module.exports = (ctx, req, res) => {
     res.end(JSON.stringify(data, null, 2));
   };
 
-  if (!ctx.data.connection) {
+  const connectionName = ctx.data.connection;
+  if (!connectionName) {
     var wtUrl = url.format({
       protocol: 'https',
       host:     req.headers.host,
@@ -18,18 +19,24 @@ module.exports = (ctx, req, res) => {
 
     return end(200, {message: "Use this url: '" + wtUrl + "?connection={MY-LDAP-CONNECTOR}' for monitoring your AD/LDAP connector."});
   }
-  if (!ctx.data.AUTH0_DOMAIN || !ctx.data.AUTH0_GLOBAL_CLIENT_ID || !ctx.data.AUTH0_GLOBAL_CLIENT_SECRET) {
-    return end(500, { message: 'Auth0 API v1 credentials or domain missing.' });
+
+  const domain = ctx.data.AUTH0_DOMAIN;
+  const clientId = ctx.data.AUTH0_CLIENT_ID;
+  const clientSecret = ctx.data.AUTH0_CLIENT_SECRET;
+  if (!domain || !clientId || !clientSecret) {
+    return end(500, { message: 'Auth0 API v2 credentials or domain missing.' });
   }
 
   const authenticate = (callback) => {
     var body = {
-      'client_id':     ctx.data.AUTH0_GLOBAL_CLIENT_ID,
-      'client_secret': ctx.data.AUTH0_GLOBAL_CLIENT_SECRET,
-      'grant_type':    'client_credentials'
+      'client_id':     clientId,
+      'client_secret': clientSecret,
+      'audience':      `https://${domain}/api/v2/`,
+      'grant_type':    'client_credentials',
+      'scope':         'read:connections'
     };
 
-    var tokenUrl = `https://${ctx.data.AUTH0_DOMAIN}/oauth/token`;
+    const tokenUrl = `https://${domain}/oauth/token`;
     console.log('Authenticating:', tokenUrl);
 
     request.post({ url:  tokenUrl, form: body }, (err, resp, body) => {
@@ -47,25 +54,31 @@ module.exports = (ctx, req, res) => {
         return end(500, { message: 'Error authenticating to the Auth0 API.', details: err.message });
       }
 
-      var connectionUrl = `https://${ctx.data.AUTH0_DOMAIN}/api/connections/${ctx.data.connection}`;
-      var monitorUrl = `https://${ctx.data.AUTH0_DOMAIN}/api/connections/${ctx.data.connection}/socket`;
-      console.log('Monitoring:', monitorUrl);
-
+      const connectionsUrl = `https://${domain}/api/v2/connections`;
       request.get({
-        url: connectionUrl,
+        url: connectionsUrl,
         headers: {
           'Authorization': `Bearer ${token}`
-        }
+        },
+        qs: {
+          name: connectionName,
+          page: 0,
+          per_page: 1,
+          fields: "id,strategy"
+        },
+        json: true
       }, (err, resp, body) => {
         if (err) return end(500, { message: 'Error calling the monitoring endpoint.', details: err.message });
-        else if (resp.statusCode === 404) return end(400, { message: 'The connection does not exist.' });
         else if (resp.statusCode !== 200) return end(400, { message: 'Failed to obtain connection information.' });
+        else if (!body || body.length === 0) return end(400, { message: 'The connection does not exist.' });
 
-        body = JSON.parse(body);
-        if (body.strategy !== 'ad' && body.strategy !== 'auth0-adldap') {
+        const connection = body[0];
+        if (connection.strategy !== 'ad' && connection.strategy !== 'auth0-adldap') {
           return end(400, { message: 'The connection is not an AD/LDAP connection.' });
         }
 
+        const monitorUrl = `https://${domain}/api/v2/connections/${encodeURIComponent(connection.id)}/status`;
+        console.log('Monitoring:', monitorUrl);
         request.get({ url: monitorUrl, headers: { 'Authorization': `Bearer ${token}` } }, (err, resp, body) => {
           if (err) return end(500, { message: 'Error calling the monitoring endpoint.', details: err.message });
           else if (resp.statusCode === 404) return end(400, { message: 'The connector is offline.' });
