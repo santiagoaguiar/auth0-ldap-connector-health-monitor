@@ -23,11 +23,10 @@ The client ID and secret must be for a Machine-to-Machine Application with acces
 Once the task has been deployed you can monitor any connector in your account by calling the task like this:
 
 ```
-GET https://webtask.it.auth0.com/api/run/{YOUR_CONTAINER_NAME}/ldap-connector-health?connection=my-ldap-store
-GET https://webtask.it.auth0.com/api/run/{YOUR_CONTAINER_NAME}/ldap-connector-health?connection=my-other-connector
+GET https://webtask.it.auth0.com/api/run/{YOUR_CONTAINER_NAME}/ldap-connector-health?id=con_aabbccddeeffgghh
 ```
 
-Where `connection` is the name of the **AD/LDAP** Connection in Auth0.
+Where `id` is the connection ID of the **AD/LDAP** Connection in Auth0. You can query the connection ID by using the [Management API](https://auth0.com/docs/api/management/v2#!/Connections/get_connections).
 
 The webtask will return the following:
 
