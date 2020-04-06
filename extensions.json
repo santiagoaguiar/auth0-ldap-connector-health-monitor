@@ -3489,7 +3489,7 @@
   },
   {
     "name": "auth0-delegated-admin",
-    "version": "4.2.0",
+    "version": "4.3.0",
     "description": "This extension allows non-dashboard administrators to manage (a subset of) users.",
     "keywords": [
       "auth0",
@@ -3526,11 +3526,6 @@
       "FAVICON_PATH": {
         "description": "Path to custom favicon",
         "example": "https://cdn.fabrikam.com/static/extensions/theme/favicon.png",
-        "required": false
-      },
-      "AUTH0_CUSTOM_DOMAIN": {
-        "description": "Custom domain",
-        "example": "example.com",
         "required": false
       },
       "FEDERATED_LOGOUT": {
