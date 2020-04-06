@@ -3489,7 +3489,7 @@
   },
   {
     "name": "auth0-delegated-admin",
-    "version": "4.2.0",
+    "version": "4.3.0",
     "description": "This extension allows non-dashboard administrators to manage (a subset of) users.",
     "keywords": [
       "auth0",
@@ -3532,6 +3532,22 @@
         "description": "Custom domain",
         "example": "example.com",
         "required": false
+      },
+      "USER_SEARCH_ENGINE": {
+        "description": "User search engine. Cloud only supports V3",
+        "type": "select",
+        "default": "v3",
+        "allowMultiple": false,
+        "options": [
+          {
+            "value": "v3",
+            "text": "v3"
+          },
+          {
+            "value": "v2",
+            "text": "v2"
+          }
+        ]
       },
       "FEDERATED_LOGOUT": {
         "description": "Also sign out from the IDP when users logout?",
